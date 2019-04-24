@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="353.0" stylesheets="@../css/PrincipalDrawer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="117.0" fitWidth="353.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/mosaicoPrincipal.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton accessibleText="button_one" buttonType="RAISED" prefHeight="100.0" prefWidth="353.0" text="Inicio" textFill="#26ae76">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton accessibleText="button_two" buttonType="RAISED" prefHeight="100.0" prefWidth="353.0" text="Perfil" textFill="#26ae76">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton accessibleText="button_three" buttonType="RAISED" prefHeight="100.0" prefWidth="353.0" text="Tiendas" textFill="#26ae76">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton accessibleText="button_four" buttonType="RAISED" prefHeight="100.0" prefWidth="353.0" text="Salir" textFill="#26ae76">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="950.0" prefWidth="1200.0" style="-fx-background-color: #26ae76;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.NewAccountController">
+   <children>
+      <Label layoutX="544.0" layoutY="37.0" text="Nueva Cuenta" textFill="WHITE" AnchorPane.topAnchor="37.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="108.0" text="Datos Personales" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="30.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="30.0" layoutY="146.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="30.0">
+         <children>
+            <JFXTextField fx:id="newNombre" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="29.0" promptText="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="newApellidos" focusColor="#26ae76" labelFloat="true" layoutX="275.0" layoutY="29.0" promptText="Apellidos">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXDatePicker fx:id="newFechaNacimiento" defaultColor="#26ae76" layoutX="12.0" layoutY="134.0" promptText="Fecha de Nacimiento" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Label layoutX="30.0" layoutY="550.0" text="Dirección" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="30.0" layoutY="395.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="620.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <JFXTextField fx:id="newCalle" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="33.0" prefHeight="39.0" prefWidth="247.0" promptText="Calle">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="newPortal" focusColor="#26ae76" labelFloat="true" layoutX="308.0" layoutY="33.0" prefHeight="39.0" prefWidth="151.0" promptText="Portal">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="newPiso" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="128.0" prefHeight="39.0" prefWidth="75.0" promptText="Piso">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="newCodPostal" focusColor="#26ae76" labelFloat="true" layoutX="112.0" layoutY="128.0" prefHeight="39.0" prefWidth="124.0" promptText="Codigo Postal">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="newCiudad" focusColor="#26ae76" labelFloat="true" layoutX="275.0" layoutY="128.0" prefHeight="39.0" prefWidth="185.0" promptText="Ciudad">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </Pane>
+      <Pane layoutX="646.0" layoutY="146.0" prefHeight="200.0" prefWidth="523.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="30.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <JFXTextField fx:id="newNombreUsuario" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="29.0" promptText="Nombre de Usuario">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="newCorreo" focusColor="#26ae76" labelFloat="true" layoutX="275.0" layoutY="29.0" promptText="Correo">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="newPassword" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="123.0" promptText="Contraseña">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXPasswordField fx:id="repeatPassword" focusColor="#26ae76" labelFloat="true" layoutX="275.0" layoutY="123.0" promptText="Repita contraseña">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXPasswordField>
+         </children>
+      </Pane>
+      <Label layoutX="646.0" layoutY="108.0" text="Datos de la Cuenta" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="403.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="buttonCrear" buttonType="RAISED" layoutX="578.0" layoutY="869.0" onAction="#crearCliente" ripplerFill="WHITE" style="-fx-background-color: #ffffff;" text="Crear">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <StackPane fx:id="stackPane" layoutX="399.0" layoutY="649.0" prefHeight="160.0" prefWidth="425.0" style="-fx-background-color: #26ae76;" />
+      <ImageView fx:id="volverAtrás" fitHeight="48.0" fitWidth="51.0" layoutX="20.0" layoutY="19.0" onMouseClicked="#volverALogin" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../images/volver2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
