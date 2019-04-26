@@ -31,7 +31,7 @@ public class PrincipalPageController implements Initializable {
 		
 		try {
 			//Carga el contenido del menú desplegable de la derecha de la scene
-			VBox box = FXMLLoader.load(getClass().getClassLoader().getResource("view/PrincipalDrawerContent.fxml"));
+			VBox box = FXMLLoader.load(getClass().getClassLoader().getResource("view/ContentPrincipalDrawer.fxml"));
 			menuDrawer.setSidePane(box);
 		} catch (IOException e1) {
 			e1.printStackTrace();

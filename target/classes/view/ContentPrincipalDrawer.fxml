@@ -6,32 +6,31 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="353.0" stylesheets="@../css/PrincipalDrawer.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="drawerVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.DrawerController">
    <children>
-      <ImageView fitHeight="117.0" fitWidth="358.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgDrawer" fitHeight="199.0" fitWidth="395.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/mosaicoPrincipal.jpg" />
+            <Image url="@../images/cabecera.png" />
          </image>
       </ImageView>
-      <JFXButton accessibleText="button_one" buttonType="RAISED" lineSpacing="1.0" prefHeight="100.0" prefWidth="355.0" text="Inicio" textFill="#26ae76">
+      <JFXButton fx:id="btInicio" accessibleText="button_one" buttonType="RAISED" lineSpacing="1.0" onAction="#goPrincipalPage" prefHeight="100.0" prefWidth="355.0" text="Inicio" textFill="#26ae76">
          <font>
-            <Font size="18.0" />
+            <Font name="Harlow Solid Italic" size="64.0" />
          </font>
       </JFXButton>
-      <JFXButton accessibleText="button_two" buttonType="RAISED" prefHeight="100.0" prefWidth="355.0" text="Perfil" textFill="#26ae76">
+      <JFXButton fx:id="btPerfil" accessibleText="button_two" buttonType="RAISED" prefHeight="100.0" prefWidth="355.0" text="Perfil" textFill="#26ae76">
          <font>
-            <Font size="18.0" />
+            <Font name="Harlow Solid Italic" size="64.0" />
          </font>
       </JFXButton>
-      <JFXButton accessibleText="button_three" buttonType="RAISED" prefHeight="100.0" prefWidth="355.0" text="Tiendas" textFill="#26ae76">
+      <JFXButton fx:id="btTienda" accessibleText="button_three" buttonType="RAISED" prefHeight="100.0" prefWidth="355.0" text="Tiendas" textFill="#26ae76">
          <font>
-            <Font size="18.0" />
+            <Font name="Harlow Solid Italic" size="64.0" />
          </font>
       </JFXButton>
-      <JFXButton accessibleText="button_four" buttonType="RAISED" prefHeight="100.0" prefWidth="400.0" text="Salir" textFill="#26ae76">
+      <JFXButton fx:id="btSalir" accessibleText="button_four" buttonType="RAISED" onAction="#goOut" prefHeight="100.0" prefWidth="400.0" text="Salir" textFill="#26ae76">
          <font>
-            <Font size="18.0" />
+            <Font name="Harlow Solid Italic" size="64.0" />
          </font>
       </JFXButton>
    </children>

@@ -57,6 +57,7 @@ public class PantallasController {
 		
 	}
 	
+	//Metodo para comparar dos strings introducidos por inputs con dos string de bbdd
 	public boolean validacionEntrada(String nombre, String pass) {
 		ClientesDao helpers = new ClientesDao();
 		List<Cliente> clientes = helpers.obtenerClientes();

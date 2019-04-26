@@ -35,9 +35,6 @@ public class ResetPassController implements Initializable {
 	private JFXButton bRecuperar;
 
 	@FXML
-	private JFXButton bCambiar;
-
-	@FXML
 	private StackPane stackPane;
 
 	PantallasController p = new PantallasController();
@@ -47,62 +44,66 @@ public class ResetPassController implements Initializable {
 
 		String usernameInput = username.getText();
 		String mailInput = mail.getText();
-
-		boolean succesfull = p.validacionEntrada(usernameInput, mailInput);
 		
 		ClientesDao helpers = new ClientesDao();
 		List<Cliente> clientes = helpers.obtenerClientes();
 		
-		if(succesfull == true ) {
-			System.out.println("Datos correctos");
-		} else {
-			System.out.println("Datos incorrectos");
-		}
+		boolean succesfull = false;
+//		Validacion usando el metodo de PantallasController
+//		boolean succesfull = p.validacionEntrada(usernameInput, mailInput);
+//		
 
-//		for (Cliente c : clientes) {
-//			if (usernameInput.equals(c.getNombreUsuario()) && mailInput.equals(c.getEmail())) {
-//				Text contra = new Text(c.getPassword());
-//				JFXButton ok = new JFXButton("Iniciar Sesion");
-//				JFXDialog dialog = p.crearDialog(new Text("Su contraseña es:"), contra, stackPane, ok);
-//
-//				ok.setOnAction(new EventHandler<ActionEvent>() {
-//
-//					@Override
-//					public void handle(ActionEvent event) {
-//						try {
-//							Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/Login.fxml"));
-//							p.cambiarPantalla(window);
-//							// Conseguir cerar la ventana
-////							Stage resetStage = LoginController.resetPassWindow;
-////							resetStage.close();
-//
-//						} catch (IOException e) {
-//							e.printStackTrace();
-//							System.err.println("FALLO AL CARGAR LA PANTALLA DE LOGIN");
-//						}
-//					}
-//				});
-//				dialog.show();
-//				succesfull = true;
-//			}
+//		
+//		if(succesfull == true ) {
+//			System.out.println("Datos correctos");
+//		} else {
+//			System.out.println("Datos incorrectos");
 //		}
-		// si ningun email introducido ni nombre de usuario coinciden
-		// se imprime un mensaje de erro a la hora de querer recuperar la contraseña
-//		if (succesfull == !true) {
-//			JFXButton ok = new JFXButton("okay");
-//			JFXDialog dialog = p.crearDialog(new Text("Error a la hora de recuperar la contraseña"),
-//					new Text("No existe ninguna cuenta con esos datos"), stackPane, ok);
-//
-//			ok.setOnAction(new EventHandler<ActionEvent>() {
-//
-//				@Override
-//				public void handle(ActionEvent event) {
-//					// TODO Auto-generated method stub
-//					dialog.close();
-//				}
-//			});
-//			dialog.show();
-//		}
+
+		for (Cliente c : clientes) {
+			if (usernameInput.equals(c.getNombreUsuario()) && mailInput.equals(c.getEmail())) {
+				Text contra = new Text(c.getPassword());
+				JFXButton ok = new JFXButton("Iniciar Sesion");
+				JFXDialog dialog = p.crearDialog(new Text("Su contraseña es:"), contra, stackPane, ok);
+
+				ok.setOnAction(new EventHandler<ActionEvent>() {
+
+					@Override
+					public void handle(ActionEvent event) {
+						try {
+							Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/Login.fxml"));
+							p.cambiarPantalla(window);
+							// Conseguir cerar la ventana
+//							Stage resetStage = LoginController.resetPassWindow;
+//							resetStage.close();
+
+						} catch (IOException e) {
+							e.printStackTrace();
+							System.err.println("FALLO AL CARGAR LA PANTALLA DE LOGIN");
+						}
+					}
+				});
+				dialog.show();
+				succesfull = true;
+			}
+		}
+//		 si ningun email introducido ni nombre de usuario coinciden
+//		 se imprime un mensaje de erro a la hora de querer recuperar la contraseña
+		if (succesfull == !true) {
+			JFXButton ok = new JFXButton("okay");
+			JFXDialog dialog = p.crearDialog(new Text("Error a la hora de recuperar la contraseña"),
+					new Text("No existe ninguna cuenta con esos datos"), stackPane, ok);
+
+			ok.setOnAction(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					dialog.close();
+				}
+			});
+			dialog.show();
+		}
 
 	}
 
