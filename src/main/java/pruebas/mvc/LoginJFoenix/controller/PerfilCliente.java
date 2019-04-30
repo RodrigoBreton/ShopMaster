@@ -86,7 +86,7 @@ public class PerfilCliente implements Initializable {
 		nombre.setText(LoginController.currentCliente.getNombre());
 		apellidos.setText(LoginController.currentCliente.getApellidos());
 		nombreUsuario.setText(LoginController.currentCliente.getNombreUsuario());
-		correo.setText(LoginController.currentCliente.getNombreUsuario());
+		correo.setText(LoginController.currentCliente.getEmail());
 		calle.setText(LoginController.currentCliente.getDireccion().getCalle());
 		portal.setText(LoginController.currentCliente.getDireccion().getPortal());
 		piso.setText(LoginController.currentCliente.getDireccion().getPiso());
