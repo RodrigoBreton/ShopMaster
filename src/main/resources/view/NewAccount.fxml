@@ -118,7 +118,7 @@
          </font>
       </JFXButton>
       <StackPane fx:id="stackPane" layoutX="399.0" layoutY="649.0" prefHeight="160.0" prefWidth="425.0" style="-fx-background-color: #26ae76;" />
-      <ImageView fx:id="volverAtrás" fitHeight="48.0" fitWidth="51.0" layoutX="20.0" layoutY="19.0" onMouseClicked="#volverALogin" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <ImageView fx:id="volverAtrás" fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="19.0" onMouseClicked="#volverALogin" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
          <image>
             <Image url="@../images/volver2.png" />
          </image>

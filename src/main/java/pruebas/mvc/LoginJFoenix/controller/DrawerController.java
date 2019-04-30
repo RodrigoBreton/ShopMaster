@@ -50,6 +50,15 @@ public class DrawerController implements Initializable {
 		p.cambiarPantalla(window);
     }
 
+	@FXML
+    void goPerfil(ActionEvent event) throws IOException {
+		System.out.println("Esta intentando ir a la pagina de perfil");
+		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/PerfilCliente.fxml"));
+		p.cambiarPantalla(window);
+
+    }
+
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub

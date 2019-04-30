@@ -29,6 +29,8 @@ import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
 public class LoginController implements Initializable {
 	public static Stage resetPassWindow; //variable que guarda la ventana de resetPass
 
+	public static Cliente currentCliente;
+	
 	@FXML
 	private JFXPasswordField password;
 
@@ -94,6 +96,7 @@ public class LoginController implements Initializable {
 				});
 				dialog.show();
 				succesfull = true;
+				currentCliente = client;
 
 				System.out.println("Bienvenido");
 

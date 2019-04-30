@@ -1,15 +1,22 @@
 package pruebas.mvc.LoginJFoenix.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import pruebas.mvc.LoginJFoenix.Main;
 import pruebas.mvc.LoginJFoenix.modelo.dao.ClientesDao;
@@ -18,35 +25,24 @@ import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
 public class PantallasController {
 
 	public void cambiarPantalla(Parent window){
-		//Se crea una escena con la pantalla anidada
-		Scene newScene = new Scene(window);
 		
+		Scene newScene = new Scene(window); //Se crea una escena con la pantalla anidada
 		//Se declara un Stage y se le pasa el valor del stage actual
 		Stage mainWindow;
 		mainWindow = Main.primaryStage;
-		
-		//Se le otorga el valor de la escena deseada al stage
-		mainWindow.setScene(newScene);
+		mainWindow.setScene(newScene); //Se le otorga el valor de la escena deseada al stage
 	}
 	
 	public JFXDialog crearDialog(Node tittle, Node body, StackPane stackPane, JFXButton button) {
-		//Se crea un DialogLayout para los detalles del Dialog
-		JFXDialogLayout layout = new JFXDialogLayout();
 		
-		//Se le da un titulo al Dialog
-		layout.setHeading(tittle);
-		
-		//Se le da un Body al Dialog
-		layout.setBody(body);
-		
+		JFXDialogLayout layout = new JFXDialogLayout(); //Se crea un DialogLayout para los detalles del Dialog
+		layout.setHeading(tittle);//Se le da un titulo al Dialog
+		layout.setBody(body); //Se le da un Body al Dialog
 		//Se establece el Dialog con los detalles del Dialog
 		JFXDialog dialog = new JFXDialog(stackPane, layout, JFXDialog.DialogTransition.CENTER);
-		
-		//Se le atribuye un boton al Dialog 
-		layout.setActions(button);
+		layout.setActions(button); //Se le atribuye un boton al Dialog 
 		
 		return dialog;
-		
 	}
 	
 	public void nuevaVentana(Parent window) {
@@ -70,6 +66,12 @@ public class PantallasController {
 		}
 		return succesfull;
 	}
-
+	
+	//Metodo para cargar el contenido del Drawer
+	public void cargarDrawer(JFXDrawer menuDrawer) throws IOException {
+		VBox box = FXMLLoader.load(getClass().getClassLoader().getResource("view/ContentPrincipalDrawer.fxml"));
+		menuDrawer.setSidePane(box);
+		
+	}
 	
 }

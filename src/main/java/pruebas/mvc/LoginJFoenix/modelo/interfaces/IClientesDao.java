@@ -8,5 +8,6 @@ public interface IClientesDao {
 	
 	public void guardarCliente(Cliente c);
 	public List<Cliente> obtenerClientes();
+	public void actualizarCliente(Cliente c);
 
 }

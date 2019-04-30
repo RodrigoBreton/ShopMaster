@@ -36,5 +36,15 @@ public class ClientesDao implements IClientesDao {
 		
 		return clientes;
 	}
+	
+	public void actualizarCliente(Cliente c) {
+		Session sesion = factory.openSession();
+		Transaction t = sesion.beginTransaction();
+		
+		sesion.update(c);
+		
+		t.commit();
+		sesion.close();
+	}
 
 }

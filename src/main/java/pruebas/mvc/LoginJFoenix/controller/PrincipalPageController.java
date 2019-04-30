@@ -25,17 +25,18 @@ public class PrincipalPageController implements Initializable {
 
     @FXML
     private JFXDrawer menuDrawer;
+    
+    PantallasController p = new PantallasController();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		try {
-			//Carga el contenido del menú desplegable de la derecha de la scene
-			VBox box = FXMLLoader.load(getClass().getClassLoader().getResource("view/ContentPrincipalDrawer.fxml"));
-			menuDrawer.setSidePane(box);
+			p.cargarDrawer(menuDrawer);
 		} catch (IOException e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
-			System.err.println("------------ERROR CARGANDO EL INTERIOR DEL DRAWER------------");
+			System.err.println("------ ERROR AL CARGAR EL CONTENIDO DEL DRAWER ------");
 		}
 		
 		//Animacion del boton hamburger
