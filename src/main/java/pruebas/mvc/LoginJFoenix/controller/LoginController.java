@@ -8,6 +8,8 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXSnackbar;
+import com.jfoenix.controls.JFXSnackbar.SnackbarEvent;
 import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
@@ -17,9 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -30,6 +30,9 @@ public class LoginController implements Initializable {
 	public static Stage resetPassWindow; //variable que guarda la ventana de resetPass
 
 	public static Cliente currentCliente;
+
+	@FXML
+    private AnchorPane loginPane;
 	
 	@FXML
 	private JFXPasswordField password;
@@ -63,6 +66,10 @@ public class LoginController implements Initializable {
 	@FXML
 	void makeLogin(ActionEvent event) throws IOException {
 
+//		No se como utilizar los snackbars
+//		JFXSnackbar iniciando = new JFXSnackbar(loginPane);
+//		iniciando.enqueue(new SnackbarEvent(node));
+		
 		String usernameInput = user.getText();
 		String passInput = password.getText();
 
