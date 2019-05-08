@@ -22,6 +22,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.StageStyle;
+import pruebas.mvc.LoginJFoenix.Main;
 import pruebas.mvc.LoginJFoenix.modelo.dao.ClientesDao;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Direccion;
@@ -152,6 +154,21 @@ public class NewAccountController implements Initializable{
     
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		
+		newNombre.setStyle("-fx-text-inner-color: white");
+		newApellidos.setStyle("-fx-text-inner-color: white");
+		newFechaNacimiento.setStyle("-fx-text-inner-color: white");
+		
+		newNombreUsuario.setStyle("-fx-text-inner-color: white");
+		newCorreo.setStyle("-fx-text-inner-color: white");
+		newPassword.setStyle("-fx-text-inner-color: white");
+		repeatPassword.setStyle("-fx-text-inner-color: white");
+		
+		newCalle.setStyle("-fx-text-inner-color: white");
+		newCiudad.setStyle("-fx-text-inner-color: white");
+		newCodPostal.setStyle("-fx-text-inner-color: white");
+		newPiso.setStyle("-fx-text-inner-color: white");
+		newPortal.setStyle("-fx-text-inner-color: white");
+		
 	}
 }

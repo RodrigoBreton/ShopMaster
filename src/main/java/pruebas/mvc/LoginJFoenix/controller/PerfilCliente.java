@@ -61,26 +61,11 @@ public class PerfilCliente implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		try {
-			p.cargarDrawer(menuDrawer);
+			p.cargarDrawerHamburger(menuDrawer, menuHamburger);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 			System.err.println("------ ERROR AL CARGAR EL CONTENIDO DEL DRAWER ------");
 		}
-
-		// Animacion del boton hamburger
-		HamburgerBackArrowBasicTransition flechaIzq = new HamburgerBackArrowBasicTransition(menuHamburger);
-		flechaIzq.setRate(-1);
-		menuHamburger.addEventHandler(MouseEvent.MOUSE_PRESSED, (e) -> {
-			flechaIzq.setRate(flechaIzq.getRate() * -1);
-			flechaIzq.play();
-
-			// Control del menu desplegable
-			if (menuDrawer.isOpened()) {
-				menuDrawer.close();
-			} else {
-				menuDrawer.open();
-			}
-		});
 		
 		//Obtener datos del cliente
 		nombre.setText(LoginController.currentCliente.getNombre());

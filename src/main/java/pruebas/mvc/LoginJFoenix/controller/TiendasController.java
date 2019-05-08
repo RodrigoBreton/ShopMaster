@@ -1,53 +1,61 @@
 package pruebas.mvc.LoginJFoenix.controller;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
-import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import com.jfoenix.controls.JFXListView;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-public class TiendasController implements Initializable{
-	
-	@FXML
-    private JFXDrawer menuDrawer;
-	
-	@FXML
-    private JFXHamburger menuHamburger;
+public class TiendasController implements Initializable {
 
+	@FXML
+	private JFXDrawer menuDrawer;
+
+	@FXML
+	private JFXHamburger menuHamburger;
+
+	@FXML
+	private JFXListView<Label> categorias;
+	
 	PantallasController p = new PantallasController();
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		try {
-			p.cargarDrawer(menuDrawer);
+			p.cargarDrawerHamburger(menuDrawer, menuHamburger);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 			System.err.println("------ ERROR AL CARGAR EL CONTENIDO DEL DRAWER ------");
 		}
 
-		// Animacion del boton hamburger
-		HamburgerBackArrowBasicTransition flechaIzq = new HamburgerBackArrowBasicTransition(menuHamburger);
-		flechaIzq.setRate(-1);
-		menuHamburger.addEventHandler(MouseEvent.MOUSE_PRESSED, (e) -> {
-			flechaIzq.setRate(flechaIzq.getRate() * -1);
-			flechaIzq.play();
+		try {
+			Label comida = new Label("Comida");
+			Label ropa = new Label("Ropa");
+			Label herramientas = new Label("Herramientas");
 
-			// Control del menu desplegable
-			if (menuDrawer.isOpened()) {
-				menuDrawer.close();
-			} else {
-				menuDrawer.open();
-			}
-		});
+			// Iconos del ListView
+			Image pngComida = new Image("images/hamburguesa.png");
+			ImageView iconComida = new ImageView(pngComida);
+			comida.setGraphic(iconComida);
+			
+			categorias.getItems().add(comida);
+			categorias.getItems().add(ropa);
+			categorias.getItems().add(herramientas);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
-
-	
 
 }

@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import javafx.scene.paint.Color;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -24,54 +25,71 @@ import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
 
 public class PantallasController {
 
-	public void cambiarPantalla(Parent window){
-		
-		Scene newScene = new Scene(window); //Se crea una escena con la pantalla anidada
-		//Se declara un Stage y se le pasa el valor del stage actual
+	public void cambiarPantalla(Parent window) {
+
+		Scene newScene = new Scene(window); // Se crea una escena con la pantalla anidada
+		// Se declara un Stage y se le pasa el valor del stage actual
+		newScene.setFill(Color.TRANSPARENT);
 		Stage mainWindow;
 		mainWindow = Main.primaryStage;
-		mainWindow.setScene(newScene); //Se le otorga el valor de la escena deseada al stage
+		mainWindow.setScene(newScene); // Se le otorga el valor de la escena deseada al stage
 	}
-	
+
 	public JFXDialog crearDialog(Node tittle, Node body, StackPane stackPane, JFXButton button) {
-		
-		JFXDialogLayout layout = new JFXDialogLayout(); //Se crea un DialogLayout para los detalles del Dialog
-		layout.setHeading(tittle);//Se le da un titulo al Dialog
-		layout.setBody(body); //Se le da un Body al Dialog
-		//Se establece el Dialog con los detalles del Dialog
+
+		JFXDialogLayout layout = new JFXDialogLayout(); // Se crea un DialogLayout para los detalles del Dialog
+		layout.setHeading(tittle);// Se le da un titulo al Dialog
+		layout.setBody(body); // Se le da un Body al Dialog
+		// Se establece el Dialog con los detalles del Dialog
 		JFXDialog dialog = new JFXDialog(stackPane, layout, JFXDialog.DialogTransition.CENTER);
-		layout.setActions(button); //Se le atribuye un boton al Dialog 
-		
+		layout.setActions(button); // Se le atribuye un boton al Dialog
+
 		return dialog;
 	}
-	
+
 	public void nuevaVentana(Parent window) {
-		
+
 		Stage stage = new Stage();
 		stage.setScene(new Scene(window));
 		stage.show();
-		
+
 	}
-	
-	//Metodo para comparar dos strings introducidos por inputs con dos string de bbdd
+
+	// Metodo para comparar dos strings introducidos por inputs con dos string de
+	// bbdd
 	public boolean validacionEntrada(String nombre, String pass) {
 		ClientesDao helpers = new ClientesDao();
 		List<Cliente> clientes = helpers.obtenerClientes();
 		boolean succesfull = false;
-		
-		for(Cliente c : clientes) {
-			if(nombre.equals(c.getNombreUsuario()) && pass.equals(c.getEmail())) {
+
+		for (Cliente c : clientes) {
+			if (nombre.equals(c.getNombreUsuario()) && pass.equals(c.getEmail())) {
 				succesfull = true;
 			}
 		}
 		return succesfull;
 	}
-	
-	//Metodo para cargar el contenido del Drawer
-	public void cargarDrawer(JFXDrawer menuDrawer) throws IOException {
+
+	// Metodo para cargar el contenido del Drawer
+	public void cargarDrawerHamburger(JFXDrawer menuDrawer, JFXHamburger menuHamburger) throws IOException {
 		VBox box = FXMLLoader.load(getClass().getClassLoader().getResource("view/ContentPrincipalDrawer.fxml"));
 		menuDrawer.setSidePane(box);
-		
+
+		// Animacion del boton hamburger
+		HamburgerBackArrowBasicTransition flechaIzq = new HamburgerBackArrowBasicTransition(menuHamburger);
+		flechaIzq.setRate(-1);
+		menuHamburger.addEventHandler(MouseEvent.MOUSE_PRESSED, (e) -> {
+			flechaIzq.setRate(flechaIzq.getRate() * -1);
+			flechaIzq.play();
+
+			// Control del menu desplegable
+			if (menuDrawer.isOpened()) {
+				menuDrawer.close();
+			} else {
+				menuDrawer.open();
+			}
+		});
+
 	}
-	
+
 }

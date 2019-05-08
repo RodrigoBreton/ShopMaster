@@ -8,8 +8,6 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXSnackbar;
-import com.jfoenix.controls.JFXSnackbar.SnackbarEvent;
 import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
@@ -17,12 +15,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import pruebas.mvc.LoginJFoenix.Main;
 import pruebas.mvc.LoginJFoenix.modelo.dao.ClientesDao;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
 
@@ -51,7 +49,10 @@ public class LoginController implements Initializable {
 
 	@FXML
 	private JFXButton forgotPass;
-
+	
+	@FXML
+    private JFXButton close;
+	
 	PantallasController p = new PantallasController();
 
 //	private void setGlobalEventHandler(Node root) {
@@ -157,10 +158,17 @@ public class LoginController implements Initializable {
 //		resetPassWindow.setScene(new Scene (window));
 //		resetPassWindow.show();
     }
+	
+	@FXML
+    void exit(ActionEvent event) {
+		Main.primaryStage.close();
+    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+		password.setStyle("-fx-text-inner-color: white");
+		user.setStyle("-fx-text-inner-color: white");
 	}
 
 }

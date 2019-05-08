@@ -61,7 +61,7 @@ public class DrawerController implements Initializable {
 	@FXML
     void goTiendas(ActionEvent event) throws IOException {
 		System.out.println("Esta intentando ir a la pagina de Tienda");
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/TiendasPrincipal.fxml"));
+		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/TiendasDos.fxml"));
 		p.cambiarPantalla(window);
     }
 

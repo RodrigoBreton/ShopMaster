@@ -13,111 +13,116 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="950.0" prefWidth="1200.0" style="-fx-background-color: #26ae76;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.NewAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 50 50 50 50; -fx-background-radius: 45 45 45 45;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.NewAccountController">
    <children>
-      <Label layoutX="544.0" layoutY="37.0" text="Nueva Cuenta" textFill="WHITE" AnchorPane.topAnchor="37.0">
+      <ImageView fitHeight="1000.0" fitWidth="1500.0" layoutX="100.0" layoutY="697.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/fondoRedondeado20.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="691.0" layoutY="20.0" text="Nueva Cuenta" textFill="WHITE" AnchorPane.topAnchor="20.0">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="Harlow Solid Italic" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="29.0" layoutY="108.0" text="Datos Personales" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="30.0">
+      <Label layoutX="100.0" layoutY="101.0" text="Datos Personales" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="100.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Harlow Solid Italic" size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="30.0" layoutY="146.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="30.0">
+      <Pane layoutX="98.0" layoutY="146.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="100.0">
          <children>
-            <JFXTextField fx:id="newNombre" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="29.0" promptText="Nombre">
+            <JFXTextField fx:id="newNombre" focusColor="#f46662" labelFloat="true" layoutX="14.0" layoutY="29.0" promptText="Nombre" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="newApellidos" focusColor="#26ae76" labelFloat="true" layoutX="275.0" layoutY="29.0" promptText="Apellidos">
+            <JFXTextField fx:id="newApellidos" focusColor="#f46662" labelFloat="true" layoutX="275.0" layoutY="29.0" promptText="Apellidos" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXDatePicker fx:id="newFechaNacimiento" defaultColor="#26ae76" layoutX="12.0" layoutY="134.0" promptText="Fecha de Nacimiento" />
+            <JFXDatePicker fx:id="newFechaNacimiento" defaultColor="#f46662" layoutX="12.0" layoutY="134.0" promptText="Fecha de Nacimiento" />
          </children>
          <effect>
             <DropShadow />
          </effect>
       </Pane>
-      <Label layoutX="30.0" layoutY="550.0" text="Dirección" textFill="WHITE">
+      <Label layoutX="100.0" layoutY="361.0" text="Dirección" textFill="WHITE" AnchorPane.leftAnchor="100.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Harlow Solid Italic" size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="30.0" layoutY="395.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="620.0">
+      <Pane layoutX="100.0" layoutY="411.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="100.0">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <JFXTextField fx:id="newCalle" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="33.0" prefHeight="39.0" prefWidth="247.0" promptText="Calle">
+            <JFXTextField fx:id="newCalle" focusColor="#f46662" labelFloat="true" layoutX="14.0" layoutY="33.0" prefHeight="39.0" prefWidth="247.0" promptText="Calle" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="newPortal" focusColor="#26ae76" labelFloat="true" layoutX="308.0" layoutY="33.0" prefHeight="39.0" prefWidth="151.0" promptText="Portal">
+            <JFXTextField fx:id="newPortal" focusColor="#f46662" labelFloat="true" layoutX="308.0" layoutY="33.0" prefHeight="39.0" prefWidth="151.0" promptText="Portal" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="newPiso" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="128.0" prefHeight="39.0" prefWidth="75.0" promptText="Piso">
+            <JFXTextField fx:id="newPiso" focusColor="#f46662" labelFloat="true" layoutX="14.0" layoutY="128.0" prefHeight="39.0" prefWidth="75.0" promptText="Piso" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="newCodPostal" focusColor="#26ae76" labelFloat="true" layoutX="112.0" layoutY="128.0" prefHeight="39.0" prefWidth="124.0" promptText="Codigo Postal">
+            <JFXTextField fx:id="newCodPostal" focusColor="#f46662" labelFloat="true" layoutX="112.0" layoutY="128.0" prefHeight="39.0" prefWidth="124.0" promptText="Codigo Postal" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="newCiudad" focusColor="#26ae76" labelFloat="true" layoutX="275.0" layoutY="128.0" prefHeight="39.0" prefWidth="185.0" promptText="Ciudad">
+            <JFXTextField fx:id="newCiudad" focusColor="#f46662" labelFloat="true" layoutX="275.0" layoutY="128.0" prefHeight="39.0" prefWidth="185.0" promptText="Ciudad" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
          </children>
       </Pane>
-      <Pane layoutX="646.0" layoutY="146.0" prefHeight="200.0" prefWidth="523.0" style="-fx-background-color: #ffffff;" AnchorPane.rightAnchor="30.0">
+      <Pane layoutX="890.0" layoutY="146.0" prefHeight="200.0" prefWidth="523.0" style="-fx-background-color: black;" AnchorPane.rightAnchor="100.0">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <JFXTextField fx:id="newNombreUsuario" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="29.0" promptText="Nombre de Usuario">
+            <JFXTextField fx:id="newNombreUsuario" focusColor="#f46662" labelFloat="true" layoutX="14.0" layoutY="29.0" promptText="Nombre de Usuario" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="newCorreo" focusColor="#26ae76" labelFloat="true" layoutX="275.0" layoutY="29.0" promptText="Correo">
+            <JFXTextField fx:id="newCorreo" focusColor="#f46662" labelFloat="true" layoutX="275.0" layoutY="29.0" promptText="Correo" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="newPassword" focusColor="#26ae76" labelFloat="true" layoutX="14.0" layoutY="123.0" promptText="Contraseña">
+            <JFXPasswordField fx:id="newPassword" focusColor="#f46662" labelFloat="true" layoutX="14.0" layoutY="123.0" promptText="Contraseña" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXPasswordField>
-            <JFXPasswordField fx:id="repeatPassword" focusColor="#26ae76" labelFloat="true" layoutX="275.0" layoutY="123.0" promptText="Repita contraseña">
+            <JFXPasswordField fx:id="repeatPassword" focusColor="#f46662" labelFloat="true" layoutX="275.0" layoutY="123.0" promptText="Repita contraseña" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXPasswordField>
          </children>
       </Pane>
-      <Label layoutX="646.0" layoutY="108.0" text="Datos de la Cuenta" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="403.0">
+      <Label layoutX="877.0" layoutY="101.0" text="Datos de la Cuenta" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="442.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Harlow Solid Italic" size="24.0" />
          </font>
       </Label>
-      <JFXButton fx:id="buttonCrear" buttonType="RAISED" layoutX="578.0" layoutY="869.0" onAction="#crearCliente" ripplerFill="WHITE" style="-fx-background-color: #ffffff;" text="Crear">
+      <JFXButton fx:id="buttonCrear" buttonType="RAISED" layoutX="726.0" layoutY="866.0" onAction="#crearCliente" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Crear">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <StackPane fx:id="stackPane" layoutX="399.0" layoutY="649.0" prefHeight="160.0" prefWidth="425.0" style="-fx-background-color: #26ae76;" />
+      <StackPane fx:id="stackPane" layoutX="547.0" layoutY="655.0" prefHeight="160.0" prefWidth="425.0" style="-fx-background-color: none;" />
       <ImageView fx:id="volverAtrás" fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="19.0" onMouseClicked="#volverALogin" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
          <image>
             <Image url="@../images/volver2.png" />
