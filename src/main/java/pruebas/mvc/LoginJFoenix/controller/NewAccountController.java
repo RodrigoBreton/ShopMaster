@@ -2,9 +2,9 @@ package pruebas.mvc.LoginJFoenix.controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -22,11 +22,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import javafx.stage.StageStyle;
-import pruebas.mvc.LoginJFoenix.Main;
-import pruebas.mvc.LoginJFoenix.modelo.dao.ClientesDao;
+import pruebas.mvc.LoginJFoenix.modelo.dao.repository.ClientesDaoRepo;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Direccion;
+import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
 public class NewAccountController implements Initializable{
 
@@ -79,6 +78,9 @@ public class NewAccountController implements Initializable{
     @FXML
     private ImageView volverAtrás;
     
+    @Autowired
+    private IClientesDaoService dao;
+    
     PantallasController p = new PantallasController();
     
     @FXML
@@ -105,8 +107,7 @@ public class NewAccountController implements Initializable{
         	String usuario = newNombreUsuario.getText();
         	
         	Cliente c = new Cliente(d, nombre, apellidos, correo, usuario, contra);
-        	ClientesDao helper = new ClientesDao();
-        	helper.guardarCliente(c);
+        	dao.guardarCliente(c);
         	
         	JFXButton singUp = new JFXButton("Iniciar sesión");
         	JFXDialog correcto = p.crearDialog(new Text("Todo listo!"), new Text("Se creó la cuenta correctamente"), stackPane, singUp);

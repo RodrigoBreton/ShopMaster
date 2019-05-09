@@ -5,6 +5,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXPasswordField;
@@ -21,9 +24,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import pruebas.mvc.LoginJFoenix.Main;
-import pruebas.mvc.LoginJFoenix.modelo.dao.ClientesDao;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
+import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
+@Component
 public class LoginController implements Initializable {
 	public static Stage resetPassWindow; //variable que guarda la ventana de resetPass
 
@@ -53,6 +57,9 @@ public class LoginController implements Initializable {
 	@FXML
     private JFXButton close;
 	
+	@Autowired
+	private IClientesDaoService dao; 
+	
 	PantallasController p = new PantallasController();
 
 //	private void setGlobalEventHandler(Node root) {
@@ -76,8 +83,7 @@ public class LoginController implements Initializable {
 
 		boolean succesfull = false;
 
-		ClientesDao helpers = new ClientesDao();
-		List<Cliente> clientes = helpers.obtenerClientes();
+		List<Cliente> clientes = dao.obtenerClientes();
 
 		// Bucle para recorrer los nombre de usuarios y contraseñas de bbdd y
 		// compararlos

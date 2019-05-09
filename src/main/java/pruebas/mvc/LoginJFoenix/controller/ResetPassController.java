@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXTextField;
@@ -17,11 +19,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-import pruebas.mvc.LoginJFoenix.Main;
-import pruebas.mvc.LoginJFoenix.modelo.dao.ClientesDao;
+import pruebas.mvc.LoginJFoenix.modelo.dao.repository.ClientesDaoRepo;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
+import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
 public class ResetPassController implements Initializable {
 
@@ -36,6 +36,9 @@ public class ResetPassController implements Initializable {
 
 	@FXML
 	private StackPane stackPane;
+	
+	@Autowired
+	private IClientesDaoService dao;
 
 	PantallasController p = new PantallasController();
 
@@ -45,8 +48,7 @@ public class ResetPassController implements Initializable {
 		String usernameInput = username.getText();
 		String mailInput = mail.getText();
 		
-		ClientesDao helpers = new ClientesDao();
-		List<Cliente> clientes = helpers.obtenerClientes();
+		List<Cliente> clientes = dao.obtenerClientes();
 		
 		boolean succesfull = false;
 //		Validacion usando el metodo de PantallasController

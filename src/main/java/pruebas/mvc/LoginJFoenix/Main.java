@@ -1,25 +1,25 @@
 	package pruebas.mvc.LoginJFoenix;
 
-import java.io.IOException;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import pruebas.mvc.LoginJFoenix.configuracion.HibernateConfig;
-import pruebas.mvc.LoginJFoenix.controller.LoginController;
-import pruebas.mvc.LoginJFoenix.controller.NewAccountController;
-import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
-import javafx.fxml.FXMLLoader;
 
-
+@SpringBootApplication
 public class Main extends Application {
 	
+	private ApplicationContext applicationContext; 
 	public static Stage primaryStage;	
 
 	public void start(Stage stage) throws Exception {
@@ -30,7 +30,10 @@ public class Main extends Application {
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setTitle("ShopMaster");
 		
-		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
+        loader.setControllerFactory(applicationContext::getBean);
+        
+		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		
 		// No me coge los estilos
@@ -51,6 +54,12 @@ public class Main extends Application {
     public static void main( String[] args ) {
     	launch(args);
     	
+    }
+    
+    @Override
+    public void init() {
+        String[] args = getParameters().getRaw().toArray(new String[0]);
+        this.applicationContext = SpringApplication.run(Main.class, args);
     }
 
 }

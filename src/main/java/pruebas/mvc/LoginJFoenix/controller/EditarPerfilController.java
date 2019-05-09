@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXTextField;
@@ -17,7 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import pruebas.mvc.LoginJFoenix.modelo.dao.ClientesDao;
+import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
 public class EditarPerfilController implements Initializable {
 
@@ -51,7 +53,9 @@ public class EditarPerfilController implements Initializable {
 	@FXML
 	private StackPane stackPane;
 
-	ClientesDao helpers = new ClientesDao();
+	@Autowired
+	private IClientesDaoService dao;
+	
 	PantallasController p = new PantallasController();
 
 	@Override
@@ -99,7 +103,7 @@ public class EditarPerfilController implements Initializable {
 		LoginController.currentCliente.getDireccion().setCiudad(updateCiudad);
 
 		// Se actualizan los datos
-		helpers.actualizarCliente(LoginController.currentCliente);
+		dao.actualizarCliente(LoginController.currentCliente);
 
 		// Se crea un dialog para indicar que se realizo la actualizacion correctamente
 		// y para redirigir a la pagina de PerfilCliente

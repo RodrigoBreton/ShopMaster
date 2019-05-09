@@ -10,7 +10,7 @@
    <children>
       <ImageView fx:id="imgDrawer" fitHeight="155.0" fitWidth="353.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/cabeceraRedondeadaArriba.jpg" />
+            <Image url="@../images/cabeceraDrawer.jpeg.png" />
          </image>
       </ImageView>
       <JFXButton fx:id="btInicio" accessibleText="button_one" lineSpacing="1.0" onAction="#goPrincipalPage" prefHeight="100.0" prefWidth="355.0" text="Inicio" textFill="#f46662">

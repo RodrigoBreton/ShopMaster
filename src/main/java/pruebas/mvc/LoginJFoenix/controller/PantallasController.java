@@ -3,13 +3,15 @@ package pruebas.mvc.LoginJFoenix.controller;
 import java.io.IOException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
-import javafx.scene.paint.Color;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,13 +20,18 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import pruebas.mvc.LoginJFoenix.Main;
-import pruebas.mvc.LoginJFoenix.modelo.dao.ClientesDao;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
+import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
+@Component
 public class PantallasController {
 
+	@Autowired
+	private IClientesDaoService dao;
+	
 	public void cambiarPantalla(Parent window) {
 
 		Scene newScene = new Scene(window); // Se crea una escena con la pantalla anidada
@@ -58,8 +65,7 @@ public class PantallasController {
 	// Metodo para comparar dos strings introducidos por inputs con dos string de
 	// bbdd
 	public boolean validacionEntrada(String nombre, String pass) {
-		ClientesDao helpers = new ClientesDao();
-		List<Cliente> clientes = helpers.obtenerClientes();
+		List<Cliente> clientes = dao.obtenerClientes();
 		boolean succesfull = false;
 
 		for (Cliente c : clientes) {
