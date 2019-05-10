@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
@@ -21,6 +23,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
+@Component
 public class EditarPerfilController implements Initializable {
 
 	@FXML
@@ -56,7 +59,11 @@ public class EditarPerfilController implements Initializable {
 	@Autowired
 	private IClientesDaoService dao;
 	
-	PantallasController p = new PantallasController();
+	@Autowired
+	private ApplicationContext applicationContext;
+	
+	@Autowired
+	private PantallasController pantallasController;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -108,15 +115,17 @@ public class EditarPerfilController implements Initializable {
 		// Se crea un dialog para indicar que se realizo la actualizacion correctamente
 		// y para redirigir a la pagina de PerfilCliente
 		JFXButton ok = new JFXButton("okay");
-		JFXDialog actCompletada = p.crearDialog(new Text("¡Correcto!"),
+		JFXDialog actCompletada = pantallasController.crearDialog(new Text("¡Correcto!"),
 				new Text("Se han actualizado correctamente los datos"), stackPane, ok);
 
 		ok.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
 				try {
-					Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/PerfilCliente.fxml"));
-					p.cambiarPantalla(window);
+					FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/PerfilCliente.fxml"));
+					loader.setControllerFactory(applicationContext::getBean);
+					Parent root = loader.load();
+					pantallasController.cambiarPantalla(root);
 				} catch (IOException e) {
 					e.printStackTrace();
 					System.err.println("------ ERROR AL DIRIGIRSE A LA PGINA DE PERFIL DEL CLIENTE ------");
@@ -129,8 +138,10 @@ public class EditarPerfilController implements Initializable {
 	@FXML
 	void volverPerfilCliente(MouseEvent event) throws IOException {
 
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/PerfilCliente.fxml"));
-		p.cambiarPantalla(window);
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/PerfilCliente.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
 
 	}
 

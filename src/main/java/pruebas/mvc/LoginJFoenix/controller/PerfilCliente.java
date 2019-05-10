@@ -4,10 +4,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
-import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,8 +18,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 
+@Component
 public class PerfilCliente implements Initializable {
 
 	@FXML
@@ -55,13 +58,17 @@ public class PerfilCliente implements Initializable {
     @FXML
     private JFXButton btEditar;
 	
-	PantallasController p = new PantallasController();
+    @Autowired
+    private PantallasController pantallasController;
+    
+    @Autowired
+    private ApplicationContext applicationContext;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		try {
-			p.cargarDrawerHamburger(menuDrawer, menuHamburger);
+			pantallasController.cargarDrawerHamburger(menuDrawer, menuHamburger);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 			System.err.println("------ ERROR AL CARGAR EL CONTENIDO DEL DRAWER ------");
@@ -82,8 +89,10 @@ public class PerfilCliente implements Initializable {
 	
 	@FXML
     void goEditarPerfil(ActionEvent event) throws IOException {
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/EditarPerfil.fxml"));
-		p.cambiarPantalla(window);
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/EditarPerfil.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
     }
 
 }

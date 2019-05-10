@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.jfoenix.controls.JFXButton;
@@ -32,6 +34,9 @@ public class LoginController implements Initializable {
 	public static Stage resetPassWindow; //variable que guarda la ventana de resetPass
 
 	public static Cliente currentCliente;
+	
+	@Autowired
+	private ApplicationContext applicationContext;
 
 	@FXML
     private AnchorPane loginPane;
@@ -60,16 +65,8 @@ public class LoginController implements Initializable {
 	@Autowired
 	private IClientesDaoService dao; 
 	
-	PantallasController p = new PantallasController();
-
-//	private void setGlobalEventHandler(Node root) {
-//		root.addEventHandler(KeyEvent.KEY_PRESSED, ev -> {
-//			if (ev.getCode() == KeyCode.ENTER) {
-//				login.fire();
-//				ev.consume();
-//			}
-//		});
-//	}
+	@Autowired
+    private PantallasController pantallasController;
 
 	@FXML
 	void makeLogin(ActionEvent event) throws IOException {
@@ -97,7 +94,7 @@ public class LoginController implements Initializable {
 			if (username.equals(usernameInput) && password.equals(passInput)) {
 
 				JFXButton ok = new JFXButton("okay");
-				JFXDialog dialog = p.crearDialog(new Text("Bienvenido"), new Text("Contraseña y parametros correctos"),
+				JFXDialog dialog = pantallasController.crearDialog(new Text("Bienvenido"), new Text("Contraseña y parametros correctos"),
 						loginStackPane, ok);
 
 				ok.setOnAction(new EventHandler<ActionEvent>() {
@@ -124,7 +121,7 @@ public class LoginController implements Initializable {
 		if (succesfull == !true) {
 			System.out.println("Esta entrando");
 			JFXButton ok = new JFXButton("okay");
-			JFXDialog dialog = p.crearDialog(new Text("Error en el Login"),
+			JFXDialog dialog = pantallasController.crearDialog(new Text("Error en el Login"),
 					new Text("Usuario o Contraseña incorrectos"), loginStackPane, ok);
 
 			ok.setOnAction(new EventHandler<ActionEvent>() {
@@ -140,8 +137,10 @@ public class LoginController implements Initializable {
 			// En caso de coincidir se dirije al usuario del programa a la pantalla
 			// principal
 			System.out.println("Dirigiendose a la pantalla principal");
-			Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/PrincipalPage.fxml"));
-			p.cambiarPantalla(window);
+			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/PrincipalPage.fxml"));
+			loader.setControllerFactory(applicationContext::getBean);
+			Parent root = loader.load();
+			pantallasController.cambiarPantalla(root);
 		}
 	}
 
@@ -150,15 +149,16 @@ public class LoginController implements Initializable {
 	public void makeNewAccount(ActionEvent event) throws IOException {
 		System.out.println("Se ha pulsado el boton para ir a la pantalla de registro");
 
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/NewAccount.fxml"));
-		p.cambiarPantalla(window);
-
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/NewAccount.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
 	}
 	
 	@FXML
     void openResetPass(ActionEvent event) throws IOException {
 		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/ResetPass.fxml"));
-		p.nuevaVentana(window);
+		pantallasController.nuevaVentana(window);
 		
 //		Encontrar la manera de cerar una ventana 
 //		resetPassWindow.setScene(new Scene (window));

@@ -1,12 +1,10 @@
 	package pruebas.mvc.LoginJFoenix;
 
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Repository;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +15,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 @SpringBootApplication
+@Repository
 public class Main extends Application {
 	
+	@Autowired
 	private ApplicationContext applicationContext; 
 	public static Stage primaryStage;	
 

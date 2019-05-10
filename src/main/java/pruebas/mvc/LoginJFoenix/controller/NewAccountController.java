@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -22,13 +24,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import pruebas.mvc.LoginJFoenix.modelo.dao.repository.ClientesDaoRepo;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Direccion;
 import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
+@Component
 public class NewAccountController implements Initializable{
 
+	@Autowired
+	private ApplicationContext applicationContext;
+	
 	//Datos personales
 	@FXML
     private JFXTextField newNombre;
@@ -81,7 +86,8 @@ public class NewAccountController implements Initializable{
     @Autowired
     private IClientesDaoService dao;
     
-    PantallasController p = new PantallasController();
+    @Autowired
+    private PantallasController pantallasController;
     
     @FXML
     void crearCliente(ActionEvent event) {
@@ -110,7 +116,7 @@ public class NewAccountController implements Initializable{
         	dao.guardarCliente(c);
         	
         	JFXButton singUp = new JFXButton("Iniciar sesión");
-        	JFXDialog correcto = p.crearDialog(new Text("Todo listo!"), new Text("Se creó la cuenta correctamente"), stackPane, singUp);
+        	JFXDialog correcto = pantallasController.crearDialog(new Text("Todo listo!"), new Text("Se creó la cuenta correctamente"), stackPane, singUp);
         	
         	//Se le da una funcion al boton singUp
         	singUp.setOnAction(new EventHandler<ActionEvent>() {
@@ -118,8 +124,10 @@ public class NewAccountController implements Initializable{
 				public void handle(ActionEvent event) {
 					//Vuelve a la pantalla de Login para iniciar sesion
 					try {
-						Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/Login.fxml"));
-						p.cambiarPantalla(window);
+						FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
+						loader.setControllerFactory(applicationContext::getBean);
+						Parent root = loader.load();
+						pantallasController.cambiarPantalla(root);
 					} catch (IOException e) {
 						e.printStackTrace();
 						System.out.println("-----ERROR AL VOLVER A LA PANTALLA DE LOGIN-----");
@@ -133,7 +141,7 @@ public class NewAccountController implements Initializable{
     		System.out.println("No coinciden las contraseñas");
     		
     		JFXButton button = new JFXButton("Okay");
-    		JFXDialog error = p.crearDialog(new Text("Error"), new Text("Las contraseñas no coinciden"), stackPane, button);
+    		JFXDialog error = pantallasController.crearDialog(new Text("Error"), new Text("Las contraseñas no coinciden"), stackPane, button);
     		
     		button.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
@@ -147,9 +155,11 @@ public class NewAccountController implements Initializable{
     
     @FXML
     void volverALogin(MouseEvent event) throws IOException {
-    	
-    	Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/Login.fxml"));
-    	p.cambiarPantalla(window);
+    
+    	FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
 
     }
     

@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
 import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;
@@ -14,7 +18,11 @@ import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
+@Component
 public class DrawerController implements Initializable {
+	
+	@Autowired
+	private ApplicationContext applicationContext;
 	
 	@FXML
     private VBox drawerVBox;
@@ -34,35 +42,45 @@ public class DrawerController implements Initializable {
     @FXML
     private JFXButton btSalir;
 	
-	PantallasController p = new PantallasController();
+    @Autowired
+	private PantallasController pantallasController;
 	
 	@FXML
     void goPrincipalPage(ActionEvent event) throws IOException {
-		System.out.println("Esta intentando ir al login");
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/PrincipalPage.fxml"));
-		p.cambiarPantalla(window);
+		System.out.println("Esta intentando ir a la pagina principal");
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/PrincipalPage.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
+		
     }
 	
 	@FXML
     void goOut(ActionEvent event) throws IOException {
 		System.out.println("Esta intentando ir al login");
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/Login.fxml"));
-		p.cambiarPantalla(window);
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
     }
 
 	@FXML
     void goPerfil(ActionEvent event) throws IOException {
 		System.out.println("Esta intentando ir a la pagina de perfil");
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/PerfilCliente.fxml"));
-		p.cambiarPantalla(window);
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/PerfilCliente.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
 
     }
 	
 	@FXML
     void goTiendas(ActionEvent event) throws IOException {
 		System.out.println("Esta intentando ir a la pagina de Tienda");
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/TiendasDos.fxml"));
-		p.cambiarPantalla(window);
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/TiendasDos.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
     }
 
 	@Override

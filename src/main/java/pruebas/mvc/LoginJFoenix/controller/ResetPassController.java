@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
@@ -19,10 +21,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import pruebas.mvc.LoginJFoenix.modelo.dao.repository.ClientesDaoRepo;
 import pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente;
 import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
+@Component
 public class ResetPassController implements Initializable {
 
 	@FXML
@@ -39,8 +41,12 @@ public class ResetPassController implements Initializable {
 	
 	@Autowired
 	private IClientesDaoService dao;
+	
+	@Autowired
+	private ApplicationContext applicationContext;
 
-	PantallasController p = new PantallasController();
+	@Autowired
+	private PantallasController pantallasController;
 
 	@FXML
 	void recuperarPass(ActionEvent event) {
@@ -66,15 +72,17 @@ public class ResetPassController implements Initializable {
 			if (usernameInput.equals(c.getNombreUsuario()) && mailInput.equals(c.getEmail())) {
 				Text contra = new Text(c.getPassword());
 				JFXButton ok = new JFXButton("Iniciar Sesion");
-				JFXDialog dialog = p.crearDialog(new Text("Su contraseña es:"), contra, stackPane, ok);
+				JFXDialog dialog = pantallasController.crearDialog(new Text("Su contraseña es:"), contra, stackPane, ok);
 
 				ok.setOnAction(new EventHandler<ActionEvent>() {
 
 					@Override
 					public void handle(ActionEvent event) {
 						try {
-							Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/Login.fxml"));
-							p.cambiarPantalla(window);
+							FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
+							loader.setControllerFactory(applicationContext::getBean);
+							Parent root = loader.load();
+							pantallasController.cambiarPantalla(root);
 							// Conseguir cerar la ventana
 //							Stage resetStage = LoginController.resetPassWindow;
 //							resetStage.close();
@@ -93,7 +101,7 @@ public class ResetPassController implements Initializable {
 //		 se imprime un mensaje de erro a la hora de querer recuperar la contraseña
 		if (succesfull == !true) {
 			JFXButton ok = new JFXButton("okay");
-			JFXDialog dialog = p.crearDialog(new Text("Error a la hora de recuperar la contraseña"),
+			JFXDialog dialog = pantallasController.crearDialog(new Text("Error a la hora de recuperar la contraseña"),
 					new Text("No existe ninguna cuenta con esos datos"), stackPane, ok);
 
 			ok.setOnAction(new EventHandler<ActionEvent>() {

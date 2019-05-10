@@ -4,19 +4,20 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
-import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 
+@Component
 public class PrincipalPageController implements Initializable {
-	
+		
 	@FXML
     private AnchorPane anchorPane;
 
@@ -26,13 +27,14 @@ public class PrincipalPageController implements Initializable {
     @FXML
     private JFXDrawer menuDrawer;
     
-    PantallasController p = new PantallasController();
+    @Autowired
+    private PantallasController pantallasController;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		try {
-			p.cargarDrawerHamburger(menuDrawer, menuHamburger);
+			pantallasController.cargarDrawerHamburger(menuDrawer, menuHamburger);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

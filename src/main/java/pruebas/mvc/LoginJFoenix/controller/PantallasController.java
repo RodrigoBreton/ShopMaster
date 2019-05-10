@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.jfoenix.controls.JFXButton;
@@ -28,6 +29,9 @@ import pruebas.mvc.LoginJFoenix.modelo.interfaces.IClientesDaoService;
 
 @Component
 public class PantallasController {
+	
+	@Autowired
+	private ApplicationContext applicationContext;
 
 	@Autowired
 	private IClientesDaoService dao;
@@ -35,8 +39,8 @@ public class PantallasController {
 	public void cambiarPantalla(Parent window) {
 
 		Scene newScene = new Scene(window); // Se crea una escena con la pantalla anidada
-		// Se declara un Stage y se le pasa el valor del stage actual
 		newScene.setFill(Color.TRANSPARENT);
+		// Se declara un Stage y se le pasa el valor del stage actual
 		Stage mainWindow;
 		mainWindow = Main.primaryStage;
 		mainWindow.setScene(newScene); // Se le otorga el valor de la escena deseada al stage
@@ -78,7 +82,9 @@ public class PantallasController {
 
 	// Metodo para cargar el contenido del Drawer
 	public void cargarDrawerHamburger(JFXDrawer menuDrawer, JFXHamburger menuHamburger) throws IOException {
-		VBox box = FXMLLoader.load(getClass().getClassLoader().getResource("view/ContentPrincipalDrawer.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/ContentPrincipalDrawer.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		VBox box = loader.load();
 		menuDrawer.setSidePane(box);
 
 		// Animacion del boton hamburger
