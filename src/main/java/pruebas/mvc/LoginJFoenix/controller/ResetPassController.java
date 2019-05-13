@@ -119,8 +119,9 @@ public class ResetPassController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 
+		mail.setStyle("-fx-text-inner-color: white");
+		username.setStyle("-fx-text-inner-color: white");
 	}
 
 }

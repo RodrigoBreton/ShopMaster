@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 @SpringBootApplication
-@Repository
+//@Repository
 public class Main extends Application {
 	
 	@Autowired

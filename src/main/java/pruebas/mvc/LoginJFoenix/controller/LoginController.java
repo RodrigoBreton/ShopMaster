@@ -157,12 +157,12 @@ public class LoginController implements Initializable {
 	
 	@FXML
     void openResetPass(ActionEvent event) throws IOException {
-		Parent window = FXMLLoader.load(getClass().getClassLoader().getResource("view/ResetPass.fxml"));
-		pantallasController.nuevaVentana(window);
+
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/ResetPass.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
 		
-//		Encontrar la manera de cerar una ventana 
-//		resetPassWindow.setScene(new Scene (window));
-//		resetPassWindow.show();
     }
 	
 	@FXML
