@@ -1,0 +1,86 @@
+.tree-table-view{
+    -fx-tree-table-color: rgba(244, 102, 98, 0.5);
+    -fx-tree-table-rippler-color : rgba(244, 102, 98, 0.9);
+}
+.tree-table-view:focused .tree-table-row-cell:selected {
+    -fx-background-color: -fx-tree-table-color  ;
+    -fx-table-cell-border-color: -fx-tree-table-color;
+}
+
+.tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
+    -fx-text-fill: black;
+}
+
+.tree-table-view .jfx-rippler {
+    -fx-rippler-fill: -fx-tree-table-rippler-color;
+}
+
+.tree-table-view .column-header ,
+.tree-table-view .column-header-background,
+.tree-table-view .column-header-background .filler{
+    -fx-background-color:TRANSPARENT;
+}
+
+/*separacion de la cabecera */
+.tree-table-view .column-header{
+    -fx-border-width : 0 0 0 0;
+    -fx-border-color: TRANSPARENT;
+}
+
+/*color de las letras de la cabecera */
+.tree-table-view .column-header .label {
+    -fx-text-fill : black;
+    -fx-padding : 16 0 16 0 ;
+}
+
+/* para editar el color de la letra y mas cosas */
+.tree-table-view {
+	
+}
+
+/* color de la fecha del header */
+.tree-table-view .column-header .arrow, .tree-table-view .column-header .sort-order-dot{ 
+    -fx-background-color : black;
+}
+
+.tree-table-view .column-header:last-visible {
+    -fx-border-width: 0 2 0 1;
+}
+
+/* FONDO HEADER */
+.tree-table-view .column-header-background{
+    -fx-border-width : 0 0.0 1 0;
+    -fx-border-color:#F3F3F3;
+    -fx-background-color: #F46662;
+    -fx-background-radius: 25 25 0 0;
+}
+
+.tree-table-view .tree-table-cell{
+    -fx-border-width:0 0 0 0;
+    -fx-padding : 16 16 16 50;
+}
+
+.tree-table-view .column-overlay{
+    -fx-background-color: -fx-tree-table-color;
+}
+
+.tree-table-view .column-resize-line, .tree-table-view .column-drag-header{
+    -fx-background-color: -fx-tree-table-rippler-color;
+}
+
+.tree-table-view:focused {
+    -fx-background-color: -fx-tree-table-color,-fx-box-border,-fx-control-inner-background;
+    -fx-background-insets: -1.4, 0, 1;
+    -fx-background-radius: 1.4, 0, 0;
+    /*....*/
+    -fx-padding: 1; /* 0.083333em; */
+}
+
+.tree-table-row-cell > .tree-disclosure-node > .arrow {
+    -fx-background-color: -fx-text-fill;
+    -fx-padding: 0.333333em 0.229em 0.333333em 0.229em; /* 4 */
+    -fx-shape: "M 0 -3.5 L 4 0 L 0 3.5 z";
+}
+.tree-table-row-cell .jfx-text-field{
+    -fx-focus-color: rgba(240,40,40);
+}

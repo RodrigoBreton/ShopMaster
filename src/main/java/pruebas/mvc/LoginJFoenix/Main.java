@@ -32,8 +32,9 @@ public class Main extends Application {
 		
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
         loader.setControllerFactory(applicationContext::getBean);
-        
+ 
 		Parent root = loader.load();
+		
 		Scene scene = new Scene(root);
 		
 		// Establecer el color de relleno del Scene a transparente

@@ -19,18 +19,23 @@
             <Image url="@../images/fondoRedondeado10.png" />
          </image>
       </ImageView>
-		<Pane layoutX="509.0" layoutY="137.0" prefHeight="704.0" prefWidth="651.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="160.0">
+		<Pane layoutX="413.0" layoutY="160.0" prefHeight="680.0" prefWidth="795.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="413.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="160.0">
 			<children>
-				<JFXTextField fx:id="user" focusColor="#f46662" labelFloat="true" layoutX="307.0" layoutY="258.0" prefHeight="41.0" prefWidth="222.0" promptText="Nombre de usuario" unFocusColor="WHITE">
+            <ImageView fitHeight="680.0" fitWidth="795.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/loginGif.gif" />
+               </image>
+            </ImageView>
+				<JFXTextField fx:id="user" focusColor="#f46662" labelFloat="true" layoutX="229.0" layoutY="224.0" prefHeight="41.0" prefWidth="222.0" promptText="Nombre de usuario" unFocusColor="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></JFXTextField>
-				<JFXPasswordField fx:id="password" focusColor="#f46662" labelFloat="true" layoutX="307.0" layoutY="352.0" prefHeight="41.0" prefWidth="222.0" promptText="Contraseña" unFocusColor="WHITE">
+				<JFXPasswordField fx:id="password" focusColor="#f46662" labelFloat="true" layoutX="229.0" layoutY="340.0" prefHeight="41.0" prefWidth="222.0" promptText="Contraseña" unFocusColor="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </JFXPasswordField>
-				<JFXButton fx:id="login" buttonType="RAISED" layoutX="220.0" layoutY="556.0" onAction="#makeLogin" prefHeight="35.0" prefWidth="87.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Login">
+				<JFXButton fx:id="login" buttonType="RAISED" layoutX="71.0" layoutY="556.0" onAction="#makeLogin" prefHeight="35.0" prefWidth="87.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Login">
                <font>
                   <Font size="18.0" />
                </font></JFXButton>
@@ -38,13 +43,12 @@
                <font>
                   <Font size="18.0" />
                </font></JFXButton>
-            <Label layoutX="369.0" layoutY="65.0" text="Login" textFill="#f46662">
+            <Label layoutX="297.0" layoutY="50.0" text="Login" textFill="#f46662">
                <font>
                   <Font name="Harlow Solid Italic" size="36.0" />
                </font>
             </Label>
-            <JFXButton fx:id="forgotPass" layoutX="311.0" layoutY="448.0" onAction="#openResetPass" text="¿Has olvidado tu contraseña?" textFill="#a1a0a0" underline="true" />
-            <StackPane fx:id="loginStackPane" layoutX="237.0" layoutY="289.0" prefHeight="127.0" prefWidth="375.0" />
+            <JFXButton fx:id="forgotPass" layoutX="233.0" layoutY="447.0" onAction="#openResetPass" text="¿Has olvidado tu contraseña?" underline="true" />
 			</children>
 			<effect>
             <DropShadow />
@@ -55,5 +59,6 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
+      <StackPane fx:id="loginStackPane" layoutX="1092.0" layoutY="391.0" prefHeight="127.0" prefWidth="375.0" />
 	</children>
 </AnchorPane>
