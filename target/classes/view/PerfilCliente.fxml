@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 50 50 50 50; -fx-background-radius: 45 45 45 45;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.PerfilCliente">
+<AnchorPane prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 25 25 25 25; -fx-background-radius: 25 25 25 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.PerfilCliente">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../images/fondoRedondeado20.png" />
+            <Image url="@../images/fondoRedondeado10.png" />
          </image>
       </ImageView>
-      <JFXHamburger fx:id="menuHamburger" layoutX="1434.0" layoutY="32.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="36.0" />
+      <JFXHamburger fx:id="menuHamburger" layoutX="1434.0" layoutY="32.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Label layoutX="670.0" text="Perfil" textFill="WHITE" AnchorPane.leftAnchor="670.0" AnchorPane.rightAnchor="670.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="Harlow Solid Italic" size="64.0" />

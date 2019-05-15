@@ -11,84 +11,88 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="1000.0" prefWidth="1500.0" style="-fx-background-color: #28ae76;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="pruebas.mvc.LoginJFoenix.controller.EditarPerfilController">
+<AnchorPane prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 25 25 25 25; -fx-background-radius: 25 25 25 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.EditarPerfilController">
    <children>
+      <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/fondoRedondeado10.png" />
+         </image>
+      </ImageView>
       <Label layoutX="576.0" text="Editar Perfil" textFill="WHITE">
          <font>
             <Font name="Harlow Solid Italic" size="64.0" />
          </font>
       </Label>
-      <Pane layoutX="335.0" layoutY="130.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="333.0">
+      <Pane layoutX="335.0" layoutY="130.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="333.0">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <Label layoutX="289.0" text="Datos Personales" textFill="#28ae76">
+            <Label layoutX="289.0" text="Datos Personales" textFill="#f46662">
                <font>
                   <Font name="Harlow Solid Italic" size="36.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="nombre" focusColor="#28ae76" labelFloat="true" layoutX="33.0" layoutY="91.0" promptText="Nombre">
+            <JFXTextField fx:id="nombre" focusColor="#f46662" labelFloat="true" layoutX="33.0" layoutY="91.0" promptText="Nombre" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="nombreUsuario" focusColor="#28ae76" labelFloat="true" layoutX="416.0" layoutY="91.0" promptText="Nombre de Usuario">
+            <JFXTextField fx:id="nombreUsuario" focusColor="#f46662" labelFloat="true" layoutX="416.0" layoutY="91.0" promptText="Nombre de Usuario" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="apellidos" focusColor="#28ae76" labelFloat="true" layoutX="33.0" layoutY="249.0" prefHeight="39.0" prefWidth="263.0" promptText="Apellidos">
+            <JFXTextField fx:id="apellidos" focusColor="#f46662" labelFloat="true" layoutX="33.0" layoutY="249.0" prefHeight="39.0" prefWidth="263.0" promptText="Apellidos" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="correo" focusColor="#28ae76" labelFloat="true" layoutX="416.0" layoutY="249.0" prefHeight="39.0" prefWidth="277.0" promptText="Correo">
+            <JFXTextField fx:id="correo" focusColor="#f46662" labelFloat="true" layoutX="416.0" layoutY="249.0" prefHeight="39.0" prefWidth="277.0" promptText="Correo" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
          </children>
       </Pane>
-      <Pane layoutX="335.0" layoutY="518.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: #ffffff;">
+      <Pane layoutX="335.0" layoutY="518.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: black;">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <Label layoutX="345.0" text="Dirección" textFill="#28ae76">
+            <Label layoutX="345.0" text="Dirección" textFill="#f46662">
                <font>
                   <Font name="Harlow Solid Italic" size="36.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="calle" focusColor="#28ae76" labelFloat="true" layoutX="34.0" layoutY="91.0" prefHeight="39.0" prefWidth="312.0" promptText="Calle">
+            <JFXTextField fx:id="calle" focusColor="#f46662" labelFloat="true" layoutX="34.0" layoutY="91.0" prefHeight="39.0" prefWidth="312.0" promptText="Calle" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="portal" focusColor="#28ae76" labelFloat="true" layoutX="438.0" layoutY="91.0" prefHeight="39.0" prefWidth="142.0" promptText="Portal">
+            <JFXTextField fx:id="portal" focusColor="#f46662" labelFloat="true" layoutX="438.0" layoutY="91.0" prefHeight="39.0" prefWidth="142.0" promptText="Portal" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="piso" focusColor="#28ae76" labelFloat="true" layoutX="648.0" layoutY="91.0" prefHeight="39.0" prefWidth="127.0" promptText="Piso">
+            <JFXTextField fx:id="piso" focusColor="#f46662" labelFloat="true" layoutX="648.0" layoutY="91.0" prefHeight="39.0" prefWidth="127.0" promptText="Piso" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="codPostal" focusColor="#28ae76" labelFloat="true" layoutX="34.0" layoutY="256.0" prefHeight="39.0" prefWidth="142.0" promptText="Código Postal">
+            <JFXTextField fx:id="codPostal" focusColor="#f46662" labelFloat="true" layoutX="34.0" layoutY="256.0" prefHeight="39.0" prefWidth="142.0" promptText="Código Postal" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="ciudad" focusColor="#28ae76" labelFloat="true" layoutX="256.0" layoutY="256.0" prefHeight="39.0" prefWidth="231.0" promptText="Ciudad">
+            <JFXTextField fx:id="ciudad" focusColor="#f46662" labelFloat="true" layoutX="256.0" layoutY="256.0" prefHeight="39.0" prefWidth="231.0" promptText="Ciudad" unFocusColor="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </JFXTextField>
          </children>
       </Pane>
-      <JFXButton fx:id="btConfirmar" buttonType="RAISED" layoutX="696.0" layoutY="920.0" onAction="#updateCliente" ripplerFill="WHITE" style="-fx-background-color: #ffffff;" text="Confirmar" textFill="#28ae76">
+      <JFXButton fx:id="btConfirmar" buttonType="RAISED" layoutX="696.0" layoutY="920.0" onAction="#updateCliente" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Confirmar">
          <font>
             <Font size="20.0" />
          </font>

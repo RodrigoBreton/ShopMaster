@@ -15,5 +15,7 @@
         
         <mapping class="pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente"></mapping>
         <mapping class="pruebas.mvc.LoginJFoenix.modelo.entidades.Direccion"></mapping>
+        <mapping class="pruebas.mvc.LoginJFoenix.modelo.entidades.Tienda"></mapping>
+        <mapping class="pruebas.mvc.LoginJFoenix.modelo.entidades.Producto"></mapping>
     </session-factory>
 </hibernate-configuration>

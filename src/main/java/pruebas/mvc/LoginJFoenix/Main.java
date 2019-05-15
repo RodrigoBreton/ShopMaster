@@ -36,17 +36,9 @@ public class Main extends Application {
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
 		
-		// No me coge los estilos
-//		root.setStyle("-fx-effect: dropshadow( gaussian, rgba(0, 255, 255, 0.4), 10, 0.5, 0.0, 0.0 )");
-//		root.setStyle("-fx-padding: 10");
-//		root.setStyle("-fx-background-radius: 5");
-		
 		// Establecer el color de relleno del Scene a transparente
         scene.setFill(Color.TRANSPARENT);
-	
-     // Agregar el archivo de estilos BorderStyle.css
-//        scene.getStylesheets().add(getClass().getResource("BorderStyle.css").toString());
-        
+
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
