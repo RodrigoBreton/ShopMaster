@@ -11,127 +11,127 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 25 25 25 25; -fx-background-radius: 25 25 25 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.PerfilCliente">
+<AnchorPane prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.PerfilCliente">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../images/fondoRedondeado10.png" />
+            <Image url="@../images/fondoPerfil.png" />
          </image>
       </ImageView>
       <JFXHamburger fx:id="menuHamburger" layoutX="1434.0" layoutY="32.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-      <Label layoutX="670.0" text="Perfil" textFill="WHITE" AnchorPane.leftAnchor="670.0" AnchorPane.rightAnchor="670.0" AnchorPane.topAnchor="0.0">
+      <Label layoutX="670.0" text="Perfil" textFill="#f46662" AnchorPane.leftAnchor="670.0" AnchorPane.rightAnchor="670.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="Harlow Solid Italic" size="64.0" />
          </font>
       </Label>
-      <Pane layoutX="334.0" layoutY="122.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="334.0" AnchorPane.rightAnchor="334.0">
+      <Pane layoutX="334.0" layoutY="122.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: #2B1C4F;" AnchorPane.leftAnchor="334.0" AnchorPane.rightAnchor="334.0">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <Label layoutX="270.0" text="Datos Personales" textFill="#f46662">
+            <Label layoutX="242.0" layoutY="14.0" text="Datos Personales" textFill="#f46662">
                <font>
-                  <Font name="Harlow Solid Italic" size="36.0" />
+                  <Font name="OCR A Extended" size="36.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="98.0" text="Nombre:" textFill="#f46662" underline="true">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="27.0" layoutY="260.0" text="Apellidos:" textFill="#f46662" underline="true">
+            <Label layoutX="31.0" layoutY="98.0" style="-fx-background-color: #3C2E5F;" text="Nombre:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="393.0" layoutY="98.0" text="Nombre de usuario:" textFill="#f46662" underline="true">
+            <Label layoutX="27.0" layoutY="260.0" style="-fx-background-color: #3C2E5F;" text="Apellidos:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="397.0" layoutY="260.0" text="Correo:" textFill="#f46662" underline="true">
+            <Label layoutX="393.0" layoutY="98.0" style="-fx-background-color: #3C2E5F;" text="Nombre de usuario:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="nombre" layoutX="132.0" layoutY="98.0" text="Label" textFill="#f46662">
+            <Label layoutX="397.0" layoutY="260.0" style="-fx-background-color: #3C2E5F;" text="Correo:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="nombreUsuario" layoutX="602.0" layoutY="98.0" text="Label" textFill="#f46662">
+            <Label fx:id="nombre" layoutX="132.0" layoutY="98.0" text="Label" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="apellidos" layoutX="132.0" layoutY="260.0" text="Label" textFill="#f46662">
+            <Label fx:id="nombreUsuario" layoutX="602.0" layoutY="98.0" text="Label" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="correo" layoutX="501.0" layoutY="260.0" text="Label" textFill="#f46662">
+            <Label fx:id="apellidos" layoutX="132.0" layoutY="260.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="correo" layoutX="501.0" layoutY="260.0" text="Label" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="334.0" layoutY="510.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="334.0" AnchorPane.rightAnchor="334.0">
+      <Pane layoutX="334.0" layoutY="510.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: #2b1c4f;" AnchorPane.leftAnchor="334.0" AnchorPane.rightAnchor="334.0">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <Label layoutX="345.0" text="Dirección" textFill="#f46662">
+            <Label layoutX="318.0" layoutY="14.0" text="Dirección" textFill="#f46662">
                <font>
-                  <Font name="Harlow Solid Italic" size="36.0" />
+                  <Font name="OCR A Extended" size="36.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="98.0" text="Calle:" textFill="#f46662" underline="true">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="604.0" layoutY="98.0" text="Piso:" textFill="#f46662" underline="true">
+            <Label layoutX="31.0" layoutY="98.0" style="-fx-background-color: #3C2E5F;" text="Calle:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="416.0" layoutY="98.0" text="Portal:" textFill="#f46662" underline="true">
+            <Label layoutX="604.0" layoutY="98.0" style="-fx-background-color: #3C2E5F;" text="Piso:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="260.0" text="Código Postal:" textFill="#f46662" underline="true">
+            <Label layoutX="416.0" layoutY="98.0" style="-fx-background-color: #3C2E5F;" text="Portal:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="323.0" layoutY="260.0" text="Ciudad:" textFill="#f46662" underline="true">
+            <Label layoutX="31.0" layoutY="260.0" style="-fx-background-color: #3C2E5F;" text="Código Postal:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="calle" layoutX="111.0" layoutY="98.0" text="Label" textFill="#f46662">
+            <Label layoutX="323.0" layoutY="260.0" style="-fx-background-color: #3C2E5F;" text="Ciudad:" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="portal" layoutX="501.0" layoutY="98.0" text="Label" textFill="#f46662">
+            <Label fx:id="calle" layoutX="111.0" layoutY="98.0" text="Label" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="piso" layoutX="674.0" layoutY="98.0" text="Label" textFill="#f46662">
+            <Label fx:id="portal" layoutX="501.0" layoutY="98.0" text="Label" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="codPostal" layoutX="190.0" layoutY="260.0" text="Label" textFill="#f46662">
+            <Label fx:id="piso" layoutX="674.0" layoutY="98.0" text="Label" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="ciudad" layoutX="421.0" layoutY="260.0" text="Label" textFill="#f46662">
+            <Label fx:id="codPostal" layoutX="190.0" layoutY="260.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="ciudad" layoutX="421.0" layoutY="260.0" text="Label" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -139,7 +139,7 @@
          </children>
       </Pane>
       <JFXDrawer fx:id="menuDrawer" defaultDrawerSize="400.0" prefHeight="1000.0" prefWidth="353.0" style="-fx-border-radius: 50 50 50 50; -fx-background-radius: 45 45 45 45; -fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <JFXButton fx:id="btEditar" buttonType="RAISED" layoutX="686.0" layoutY="910.0" onAction="#goEditarPerfil" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Editar Perfil">
+      <JFXButton fx:id="btEditar" buttonType="RAISED" layoutX="686.0" layoutY="910.0" onAction="#goEditarPerfil" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Editar Perfil" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>

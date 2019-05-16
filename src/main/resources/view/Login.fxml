@@ -12,53 +12,53 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 25 25 25 25; -fx-background-radius: 25 25 25 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.LoginController">
+<AnchorPane fx:id="loginPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.LoginController">
 	<children>
       <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../images/fondoRedondeado10.png" />
+            <Image url="@../images/giphy.1.gif" />
          </image>
       </ImageView>
-		<Pane layoutX="413.0" layoutY="160.0" prefHeight="680.0" prefWidth="795.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="413.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="160.0">
+		<Pane layoutX="354.0" layoutY="230.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="354.0" AnchorPane.rightAnchor="346.0" AnchorPane.topAnchor="230.0">
 			<children>
-            <ImageView fitHeight="680.0" fitWidth="795.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/loginGif.gif" />
+                  <Image url="@../images/loginGif2.gif" />
                </image>
+               <effect>
+                  <DropShadow />
+               </effect>
             </ImageView>
-				<JFXTextField fx:id="user" focusColor="#f46662" labelFloat="true" layoutX="229.0" layoutY="224.0" prefHeight="41.0" prefWidth="222.0" promptText="Nombre de usuario" unFocusColor="WHITE">
+				<JFXTextField fx:id="user" focusColor="#f46662" labelFloat="true" layoutX="289.0" layoutY="206.0" prefHeight="41.0" prefWidth="222.0" promptText="Nombre de usuario" unFocusColor="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></JFXTextField>
-				<JFXPasswordField fx:id="password" focusColor="#f46662" labelFloat="true" layoutX="229.0" layoutY="340.0" prefHeight="41.0" prefWidth="222.0" promptText="Contraseña" unFocusColor="WHITE">
+				<JFXPasswordField fx:id="password" focusColor="#f46662" labelFloat="true" layoutX="289.0" layoutY="338.0" prefHeight="41.0" prefWidth="222.0" promptText="Contraseña" unFocusColor="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXPasswordField>
-				<JFXButton fx:id="login" buttonType="RAISED" layoutX="71.0" layoutY="556.0" onAction="#makeLogin" prefHeight="35.0" prefWidth="87.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Login">
+				<JFXButton fx:id="login" buttonType="RAISED" layoutX="149.0" layoutY="517.0" onAction="#makeLogin" prefHeight="35.0" prefWidth="87.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Login">
                <font>
                   <Font size="18.0" />
                </font></JFXButton>
-				<JFXButton fx:id="sing_up" buttonType="RAISED" layoutX="541.0" layoutY="556.0" onAction="#makeNewAccount" prefHeight="35.0" prefWidth="87.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Sing up">
+				<JFXButton fx:id="sing_up" buttonType="RAISED" layoutX="546.0" layoutY="517.0" onAction="#makeNewAccount" prefHeight="35.0" prefWidth="87.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Sing up">
                <font>
                   <Font size="18.0" />
                </font></JFXButton>
-            <Label layoutX="297.0" layoutY="50.0" text="Login" textFill="#f46662">
+            <Label layoutX="357.0" layoutY="61.0" text="Login" textFill="#f46662">
                <font>
                   <Font name="Harlow Solid Italic" size="36.0" />
                </font>
             </Label>
-            <JFXButton fx:id="forgotPass" layoutX="233.0" layoutY="447.0" onAction="#openResetPass" text="¿Has olvidado tu contraseña?" underline="true" />
+            <JFXButton fx:id="forgotPass" layoutX="293.0" layoutY="455.0" onAction="#openResetPass" text="¿Has olvidado tu contraseña?" textFill="#b5b5b5" underline="true" />
+            <StackPane fx:id="loginStackPane" layoutX="201.0" layoutY="285.0" prefHeight="127.0" prefWidth="375.0" />
 			</children>
-			<effect>
-            <DropShadow />
-			</effect>
 		</Pane>
       <JFXButton fx:id="close" layoutX="713.0" layoutY="899.0" onAction="#exit" prefHeight="46.0" prefWidth="82.0" style="-fx-background-color: F46662;" text="Cerrar">
          <font>
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <StackPane fx:id="loginStackPane" layoutX="1092.0" layoutY="391.0" prefHeight="127.0" prefWidth="375.0" />
 	</children>
 </AnchorPane>
