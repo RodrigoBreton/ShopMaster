@@ -2,10 +2,11 @@
     -fx-tree-table-color: rgba(244, 102, 98, 0.5);
     -fx-tree-table-rippler-color : rgba(244, 102, 98, 0.9);
 }
+/*  
 .tree-table-view:focused .tree-table-row-cell:selected {
     -fx-background-color: -fx-tree-table-color  ;
     -fx-table-cell-border-color: -fx-tree-table-color;
-}
+} */
 
 .tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell{
     -fx-text-fill: black;
@@ -29,16 +30,17 @@
 
 /*color de las letras de la cabecera */
 .tree-table-view .column-header .label {
-    -fx-text-fill : black;
+    -fx-text-fill : white;
     -fx-padding : 16 0 16 0 ;
 }
 
 /* para editar el color de la letra y mas cosas */
-.tree-table-view {
+.tree-table-view .colum .label{
+	-fx-text-fill : white;
 	
 }
 
-/* color de la fecha del header */
+/* color de la flecha del header */
 .tree-table-view .column-header .arrow, .tree-table-view .column-header .sort-order-dot{ 
     -fx-background-color : black;
 }
@@ -50,9 +52,9 @@
 /* FONDO HEADER */
 .tree-table-view .column-header-background{
     -fx-border-width : 0 0.0 1 0;
-    -fx-border-color:#F3F3F3;
+    -fx-border-color:#F46662;
     -fx-background-color: #F46662;
-    -fx-background-radius: 25 25 0 0;
+    -fx-background-radius: 0 0 0 0;
 }
 
 .tree-table-view .tree-table-cell{

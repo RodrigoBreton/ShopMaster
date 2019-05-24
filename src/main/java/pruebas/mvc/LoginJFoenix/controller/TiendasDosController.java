@@ -2,6 +2,7 @@ package pruebas.mvc.LoginJFoenix.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -69,11 +70,17 @@ public class TiendasDosController implements Initializable {
 //		Tienda t = new Tienda("Mediamark", d);
 //		dao.guardarTienda(t);
 		
-//		comprobacion de inserccion de productos
-//		Set<Tienda> tiendas = dao.obtenerTiendas();
-//		Set<Producto> productos = new HashSet<>();
-//		Producto p = new Producto("Tablet", 15.50, tiendas);
-//		daop.guardarProducto(p);
+//		comprobacion de la obtencion de los nombres de las tiendas a las que pertenece un producto
+//		Pasando una determinada id
+		
+		Set<Tienda> tiendass = new HashSet<>();
+		Producto productoSeleccionado = daop.obtenerById(1);
+		ArrayList<String> nombresTiendas = new ArrayList<>(); 
+		tiendass = productoSeleccionado.getTiendas();
+		for(Tienda t : tiendass) {
+			nombresTiendas.add(t.getNombre());
+		}
+		System.out.println(nombresTiendas);
 		
 		ObservableList<Shop> shops = FXCollections.observableArrayList();
 		Set<Tienda> tiendas = dao.obtenerTiendas();

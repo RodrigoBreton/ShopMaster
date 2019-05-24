@@ -137,7 +137,7 @@ public class LoginController implements Initializable {
 			// En caso de coincidir se dirije al usuario del programa a la pantalla
 			// principal
 			System.out.println("Dirigiendose a la pantalla principal");
-			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/PrincipalPage.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Productos.fxml"));
 			loader.setControllerFactory(applicationContext::getBean);
 			Parent root = loader.load();
 			pantallasController.cambiarPantalla(root);

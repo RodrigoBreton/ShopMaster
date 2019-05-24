@@ -2,7 +2,6 @@ pruebas\mvc\LoginJFoenix\Main.class
 pruebas\mvc\LoginJFoenix\controller\TiendasDosController.class
 pruebas\mvc\LoginJFoenix\controller\LoginController.class
 pruebas\mvc\LoginJFoenix\controller\DrawerController.class
-pruebas\mvc\LoginJFoenix\controller\PrincipalPageController.class
 pruebas\mvc\LoginJFoenix\modelo\dao\repository\ClientesDaoRepo.class
 pruebas\mvc\LoginJFoenix\configuracion\HibernateConfig.class
 pruebas\mvc\LoginJFoenix\modelo\entidades\Direccion.class

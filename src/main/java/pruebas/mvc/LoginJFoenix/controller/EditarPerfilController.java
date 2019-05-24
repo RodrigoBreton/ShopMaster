@@ -67,6 +67,18 @@ public class EditarPerfilController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
+		//Letras blancas del input
+		nombre.setStyle("-fx-text-inner-color: white");
+		apellidos.setStyle("-fx-text-inner-color: white");
+		nombreUsuario.setStyle("-fx-text-inner-color: white");
+		correo.setStyle("-fx-text-inner-color: white");
+		
+		calle.setStyle("-fx-text-inner-color: white");
+		portal.setStyle("-fx-text-inner-color: white");
+		piso.setStyle("-fx-text-inner-color: white");
+		codPostal.setStyle("-fx-text-inner-color: white");
+		ciudad.setStyle("-fx-text-inner-color: white");
 
 		// Rellenar los inputs con los valores iniciales del perfil
 		nombre.setText(LoginController.currentCliente.getNombre());

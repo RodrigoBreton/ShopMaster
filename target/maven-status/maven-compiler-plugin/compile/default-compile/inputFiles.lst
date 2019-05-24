@@ -6,6 +6,7 @@ C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFo
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\modelo\entidades\Tienda.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\modelo\dao\service\ClientesDaoService.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\modelo\interfaces\ITiendasDaoService.java
+C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\controller\ProductosController.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\modelo\interfaces\IClientesDaoService.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\controller\TiendasDosController.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\modelo\dao\repository\ClientesDaoRepo.java
@@ -17,7 +18,6 @@ C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFo
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\controller\PerfilCliente.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\Main.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\controller\NewAccountController.java
-C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\controller\PrincipalPageController.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\modelo\dao\service\TiendasDaoService.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\modelo\interfaces\ITiendasDaoRepo.java
 C:\Users\34634\eclipse-workspace\LoginJFoenix\src\main\java\pruebas\mvc\LoginJFoenix\modelo\dao\repository\ProductosDaoRepo.java

@@ -42,6 +42,7 @@ public class TiendasDaoRepo implements ITiendasDaoRepo {
 		List<Tienda> tiendasList = sesion.createQuery(selectAll, Tienda.class).getResultList();
 		Set<Tienda> tiendas = new HashSet<>(tiendasList);
 		
+		sesion.close();
 		return tiendas;
 	}
 

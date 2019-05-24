@@ -11,26 +11,26 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 25 25 25 25; -fx-background-radius: 25 25 25 25;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.EditarPerfilController">
+<AnchorPane prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.EditarPerfilController">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../images/fondoRedondeado10.png" />
+            <Image url="@../images/fondoPerfil.png" />
          </image>
       </ImageView>
-      <Label layoutX="576.0" text="Editar Perfil" textFill="WHITE">
+      <Label layoutX="576.0" text="Editar Perfil" textFill="#f46662">
          <font>
             <Font name="Harlow Solid Italic" size="64.0" />
          </font>
       </Label>
-      <Pane layoutX="335.0" layoutY="130.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="333.0">
+      <Pane layoutX="335.0" layoutY="130.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: #2B1C4F;" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="333.0">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <Label layoutX="289.0" text="Datos Personales" textFill="#f46662">
+            <Label layoutX="242.0" layoutY="14.0" text="Datos Personales" textFill="#f46662">
                <font>
-                  <Font name="Harlow Solid Italic" size="36.0" />
+                  <Font name="OCR A Extended" size="36.0" />
                </font>
             </Label>
             <JFXTextField fx:id="nombre" focusColor="#f46662" labelFloat="true" layoutX="33.0" layoutY="91.0" promptText="Nombre" unFocusColor="WHITE">
@@ -55,14 +55,14 @@
             </JFXTextField>
          </children>
       </Pane>
-      <Pane layoutX="335.0" layoutY="518.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: black;">
+      <Pane layoutX="335.0" layoutY="518.0" prefHeight="354.0" prefWidth="832.0" style="-fx-background-color: #2B1C4F;">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <Label layoutX="345.0" text="Dirección" textFill="#f46662">
+            <Label layoutX="318.0" layoutY="14.0" text="Dirección" textFill="#f46662">
                <font>
-                  <Font name="Harlow Solid Italic" size="36.0" />
+                  <Font name="OCR A Extended" size="36.0" />
                </font>
             </Label>
             <JFXTextField fx:id="calle" focusColor="#f46662" labelFloat="true" layoutX="34.0" layoutY="91.0" prefHeight="39.0" prefWidth="312.0" promptText="Calle" unFocusColor="WHITE">
@@ -97,11 +97,11 @@
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <StackPane fx:id="stackPane" layoutX="588.0" layoutY="413.0" prefHeight="150.0" prefWidth="327.0" />
       <ImageView fx:id="volverAtras" fitHeight="50.0" fitWidth="50.0" layoutX="72.0" layoutY="21.0" onMouseClicked="#volverPerfilCliente" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
          <image>
             <Image url="@../images/volver2.png" />
          </image>
       </ImageView>
+      <StackPane fx:id="stackPane" layoutX="588.0" layoutY="425.0" prefHeight="150.0" prefWidth="327.0" />
    </children>
 </AnchorPane>

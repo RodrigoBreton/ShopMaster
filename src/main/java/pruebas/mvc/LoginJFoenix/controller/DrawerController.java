@@ -48,9 +48,9 @@ public class DrawerController implements Initializable {
 	private PantallasController pantallasController;
 	
 	@FXML
-    void goPrincipalPage(ActionEvent event) throws IOException {
+    void goProductos(ActionEvent event) throws IOException {
 		System.out.println("Esta intentando ir a la pagina principal");
-		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/PrincipalPage.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Productos.fxml"));
 		loader.setControllerFactory(applicationContext::getBean);
 		Parent root = loader.load();
 		pantallasController.cambiarPantalla(root);

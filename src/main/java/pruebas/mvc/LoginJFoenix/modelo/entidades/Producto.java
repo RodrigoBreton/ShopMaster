@@ -16,14 +16,14 @@ public class Producto {
 	
 	private int id;
 	private String nombre;
-	private double precio;
+	private String precio;
 	private Set<Tienda> tiendas;
 	
 	public Producto() {
 		
 	}
 	
-	public Producto(String nombre, double precio, Set<Tienda> tiendas) {
+	public Producto(String nombre, String precio, Set<Tienda> tiendas) {
 		this.nombre = nombre;
 		this.precio = precio;
 		this.tiendas = tiendas;
@@ -50,11 +50,11 @@ public class Producto {
 	}
 	
 	@Column(name = "precio")
-	public double getPrecio() {
+	public String getPrecio() {
 		return precio;
 	}
 	
-	public void setPrecio(double precio) {
+	public void setPrecio(String precio) {
 		this.precio = precio;
 	}
 

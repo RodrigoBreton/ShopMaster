@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name = "tienda")
@@ -62,11 +66,12 @@ public class Tienda {
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
-
-	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+//	CascadeType.PERSIST, CascadeType.MERGE
+	@ManyToMany(cascade = { CascadeType.ALL }, fetch=FetchType.EAGER)
+	@Fetch(FetchMode.SELECT)
 	@JoinTable(name = "productos_tiendas", 
 	joinColumns = { @JoinColumn(name = "id_tienda") }, 
-	inverseJoinColumns = { @JoinColumn(name = "id_producto") })
+	inverseJoinColumns = { @JoinColumn(name = "id_producto")})
 	public Set<Producto> getProductos() {
 		return productos;
 	}
