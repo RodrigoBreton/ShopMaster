@@ -13,7 +13,7 @@
             <Image url="@../images/gifCabecera.1.gif" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btInicio" accessibleText="button_one" lineSpacing="1.0" onAction="#goProductos" prefHeight="100.0" prefWidth="355.0" text="Inicio" textFill="WHITE">
+      <JFXButton fx:id="btProductos" accessibleText="button_one" lineSpacing="1.0" onAction="#goProductos" prefHeight="100.0" prefWidth="355.0" text="Productos" textFill="WHITE">
          <font>
             <Font name="OCR A Extended" size="40.0" />
          </font>

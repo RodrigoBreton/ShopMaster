@@ -127,7 +127,6 @@ public class ProductosController implements Initializable {
 			e1.printStackTrace();
 			System.err.println("------ ERROR AL CARGAR EL CONTENIDO DEL DRAWER ------");
 		}
-
 	}
 
 	class Product extends RecursiveTreeObject<Product> {

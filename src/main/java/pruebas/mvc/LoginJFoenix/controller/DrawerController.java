@@ -33,7 +33,7 @@ public class DrawerController implements Initializable {
     private ImageView imgDrawer;
 
     @FXML
-    private JFXButton btInicio;
+    private JFXButton btProductos;
 
     @FXML
     private JFXButton btPerfil;

@@ -38,11 +38,11 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXPasswordField>
-				<JFXButton fx:id="login" buttonType="RAISED" layoutX="149.0" layoutY="517.0" onAction="#makeLogin" prefHeight="35.0" prefWidth="87.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Login">
+				<JFXButton fx:id="login" buttonType="RAISED" layoutX="117.0" layoutY="517.0" onAction="#makeLogin" prefHeight="39.0" prefWidth="143.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Iniciar Sesión">
                <font>
                   <Font size="18.0" />
                </font></JFXButton>
-				<JFXButton fx:id="sing_up" buttonType="RAISED" layoutX="546.0" layoutY="517.0" onAction="#makeNewAccount" prefHeight="35.0" prefWidth="87.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Sing up">
+				<JFXButton fx:id="sing_up" buttonType="RAISED" layoutX="576.0" layoutY="517.0" onAction="#makeNewAccount" prefHeight="39.0" prefWidth="120.0" ripplerFill="WHITE" style="-fx-background-color: F46662;" text="Registro">
                <font>
                   <Font size="18.0" />
                </font></JFXButton>
