@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.ResetPassController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.shopmaster.controller.ResetPassController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/fondoLogin.jpg" />
+            <Image url="@../images/fondoPerfil.png" />
          </image>
       </ImageView>
-      <Pane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <Pane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2B1C4F;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
             <JFXTextField fx:id="username" focusColor="#f46662" labelFloat="true" layoutX="184.0" layoutY="92.0" prefHeight="31.0" prefWidth="213.0" promptText="Introduzca su usuario" unFocusColor="WHITE" />
             <JFXTextField fx:id="mail" focusColor="#f46662" labelFloat="true" layoutX="184.0" layoutY="180.0" prefHeight="31.0" prefWidth="213.0" promptText="Introduzca su correo" unFocusColor="WHITE" />
@@ -27,8 +27,8 @@
                   <Font name="Harlow Solid Italic" size="24.0" />
                </font>
             </Label>
-            <JFXButton fx:id="bRecuperar" buttonType="RAISED" layoutX="109.0" layoutY="278.0" onAction="#recuperarPass" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Recuperar Contraseña" />
-            <JFXButton fx:id="bCambiar" buttonType="RAISED" layoutX="290.0" layoutY="278.0" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Cambiar Contraseña" />
+            <JFXButton fx:id="bRecuperar" buttonType="RAISED" layoutX="109.0" layoutY="278.0" onAction="#recuperarPass" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Recuperar Contraseña" textFill="#2b1c4f" />
+            <JFXButton fx:id="bCambiar" buttonType="RAISED" layoutX="290.0" layoutY="278.0" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Cambiar Contraseña" textFill="#2b1c4f" />
             <StackPane fx:id="stackPane" layoutX="136.0" layoutY="101.0" prefHeight="159.0" prefWidth="308.0" />
          </children>
          <effect>

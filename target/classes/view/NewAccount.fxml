@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
@@ -13,24 +12,24 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 50 50 50 50; -fx-background-radius: 45 45 45 45;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.NewAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" style="-fx-border-radius: 50 50 50 50; -fx-background-radius: 45 45 45 45;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.shopmaster.controller.NewAccountController">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1500.0" layoutX="100.0" layoutY="697.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../images/fondoPerfil.png" />
          </image>
       </ImageView>
-      <Label layoutX="691.0" layoutY="20.0" text="Nueva Cuenta" textFill="WHITE" AnchorPane.topAnchor="20.0">
+      <Label layoutX="691.0" layoutY="20.0" text="Nueva Cuenta" textFill="#f46662" AnchorPane.topAnchor="20.0">
          <font>
             <Font name="Harlow Solid Italic" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="100.0" layoutY="101.0" text="Datos Personales" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="100.0">
+      <Label layoutX="100.0" layoutY="101.0" text="Datos Personales" textFill="#f46662" wrapText="true" AnchorPane.leftAnchor="100.0">
          <font>
             <Font name="Harlow Solid Italic" size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="98.0" layoutY="146.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="100.0">
+      <Pane layoutX="98.0" layoutY="146.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: #2B1C4F;" AnchorPane.leftAnchor="100.0">
          <children>
             <JFXTextField fx:id="newNombre" focusColor="#f46662" labelFloat="true" layoutX="14.0" layoutY="29.0" promptText="Nombre" unFocusColor="WHITE">
                <font>
@@ -42,18 +41,17 @@
                   <Font size="18.0" />
                </font>
             </JFXTextField>
-            <JFXDatePicker fx:id="newFechaNacimiento" defaultColor="#f46662" layoutX="12.0" layoutY="134.0" promptText="Fecha de Nacimiento" />
          </children>
          <effect>
             <DropShadow />
          </effect>
       </Pane>
-      <Label layoutX="100.0" layoutY="361.0" text="Dirección" textFill="WHITE" AnchorPane.leftAnchor="100.0">
+      <Label layoutX="100.0" layoutY="361.0" text="Dirección" textFill="#f46662" AnchorPane.leftAnchor="100.0">
          <font>
             <Font name="Harlow Solid Italic" size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="100.0" layoutY="411.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="100.0">
+      <Pane layoutX="100.0" layoutY="411.0" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: #2B1C4F;" AnchorPane.leftAnchor="100.0">
          <effect>
             <DropShadow />
          </effect>
@@ -85,7 +83,7 @@
             </JFXTextField>
          </children>
       </Pane>
-      <Pane layoutX="890.0" layoutY="146.0" prefHeight="200.0" prefWidth="523.0" style="-fx-background-color: black;" AnchorPane.rightAnchor="100.0">
+      <Pane layoutX="890.0" layoutY="146.0" prefHeight="200.0" prefWidth="523.0" style="-fx-background-color: #2B1C4F;" AnchorPane.rightAnchor="100.0">
          <effect>
             <DropShadow />
          </effect>
@@ -112,12 +110,12 @@
             </JFXPasswordField>
          </children>
       </Pane>
-      <Label layoutX="877.0" layoutY="101.0" text="Datos de la Cuenta" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="442.0">
+      <Label layoutX="877.0" layoutY="101.0" text="Datos de la Cuenta" textFill="#f46662" wrapText="true" AnchorPane.rightAnchor="442.0">
          <font>
             <Font name="Harlow Solid Italic" size="24.0" />
          </font>
       </Label>
-      <JFXButton fx:id="buttonCrear" buttonType="RAISED" layoutX="726.0" layoutY="866.0" onAction="#crearCliente" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Crear">
+      <JFXButton fx:id="buttonCrear" buttonType="RAISED" layoutX="726.0" layoutY="866.0" onAction="#crearCliente" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Crear" textFill="#2b1c4f">
          <font>
             <Font size="18.0" />
          </font>

@@ -13,9 +13,9 @@
         <property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
         
-        <mapping class="pruebas.mvc.LoginJFoenix.modelo.entidades.Cliente"></mapping>
-        <mapping class="pruebas.mvc.LoginJFoenix.modelo.entidades.Direccion"></mapping>
-        <mapping class="pruebas.mvc.LoginJFoenix.modelo.entidades.Tienda"></mapping>
-        <mapping class="pruebas.mvc.LoginJFoenix.modelo.entidades.Producto"></mapping>
+        <mapping class="pruebas.mvc.shopmaster.modelo.entidades.Cliente"></mapping>
+        <mapping class="pruebas.mvc.shopmaster.modelo.entidades.Direccion"></mapping>
+        <mapping class="pruebas.mvc.shopmaster.modelo.entidades.Tienda"></mapping>
+        <mapping class="pruebas.mvc.shopmaster.modelo.entidades.Producto"></mapping>
     </session-factory>
 </hibernate-configuration>

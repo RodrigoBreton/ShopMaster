@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.LoginJFoenix.controller.PerfilCliente">
+<AnchorPane prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.shopmaster.controller.PerfilCliente">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -139,7 +139,7 @@
          </children>
       </Pane>
       <JFXDrawer fx:id="menuDrawer" defaultDrawerSize="400.0" prefHeight="1000.0" prefWidth="353.0" style="-fx-border-radius: 50 50 50 50; -fx-background-radius: 45 45 45 45; -fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <JFXButton fx:id="btEditar" buttonType="RAISED" layoutX="686.0" layoutY="910.0" onAction="#goEditarPerfil" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Editar Perfil" textFill="WHITE">
+      <JFXButton fx:id="btEditar" buttonType="RAISED" layoutX="686.0" layoutY="910.0" onAction="#goEditarPerfil" ripplerFill="WHITE" style="-fx-background-color: #f46662;" text="Editar Perfil" textFill="#2b1c4f">
          <font>
             <Font size="20.0" />
          </font>
