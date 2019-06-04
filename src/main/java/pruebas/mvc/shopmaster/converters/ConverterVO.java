@@ -2,7 +2,7 @@ package pruebas.mvc.shopmaster.converters;
 
 import java.util.Set;
 
-import pruebas.mvc.shopmaster.controller.TiendasDosController.TiendaVO;
+import pruebas.mvc.shopmaster.controller.TiendasController.TiendaVO;
 import pruebas.mvc.shopmaster.modelo.entidades.Direccion;
 import pruebas.mvc.shopmaster.modelo.entidades.Producto;
 import pruebas.mvc.shopmaster.modelo.entidades.Tienda;

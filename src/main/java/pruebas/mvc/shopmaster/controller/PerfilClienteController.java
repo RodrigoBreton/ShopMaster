@@ -20,7 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 
 @Component
-public class PerfilCliente implements Initializable {
+public class PerfilClienteController implements Initializable {
 
 	@FXML
 	private JFXDrawer menuDrawer;

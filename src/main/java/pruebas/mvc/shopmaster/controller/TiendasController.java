@@ -2,12 +2,12 @@ package pruebas.mvc.shopmaster.controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.jfoenix.controls.JFXDrawer;
@@ -24,21 +24,22 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableColumn.CellDataFeatures;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.util.Callback;
-import pruebas.mvc.shopmaster.modelo.entidades.Direccion;
 import pruebas.mvc.shopmaster.modelo.entidades.Producto;
 import pruebas.mvc.shopmaster.modelo.entidades.Tienda;
 import pruebas.mvc.shopmaster.modelo.interfaces.IProductosDaoService;
 import pruebas.mvc.shopmaster.modelo.interfaces.ITiendasDaoService;
 
 @Component
-public class TiendasDosController implements Initializable {
+public class TiendasController implements Initializable {
 	
 	@FXML
     private JFXHamburger menuHamburger;
@@ -46,8 +47,8 @@ public class TiendasDosController implements Initializable {
     @FXML
     private JFXDrawer menuDrawer;
     
-//    @Autowired
-//	private ApplicationContext applicationContext;
+    @Autowired
+	private ApplicationContext applicationContext;
 
     @Autowired
     private PantallasController pantallasController;
@@ -74,13 +75,16 @@ public class TiendasDosController implements Initializable {
 		Set<Producto> productos = new HashSet<>();
 		
 		for (Tienda t : tiendas) {
-			int obId = t.getId();
-			String obNombre = t.getNombre();
+			String nombre = t.getNombre();
 			productos = t.getProductos();
-			String obCalle = t.getDireccion().getCalle();
-			String obCiudad = t.getDireccion().getCiudad();
+			String calle = t.getDireccion().getCalle();
+			String ciudad = t.getDireccion().getCiudad();
 			
-			TiendaVO tiendaVO = new TiendaVO(obId, obNombre, obCalle, obCiudad, productos);
+			TiendaVO tiendaVO = new TiendaVO();
+			tiendaVO.setNombre(new SimpleStringProperty(nombre));
+			tiendaVO.setCalle(new SimpleStringProperty(calle));
+			tiendaVO.setCiudad(new SimpleStringProperty(ciudad));
+			tiendaVO.setProductos(productos);
 			tiendaVOs.add(tiendaVO);
 		}
 		
@@ -121,7 +125,7 @@ public class TiendasDosController implements Initializable {
 		});
 		
 		final TreeItem<TiendaVO> root = new RecursiveTreeItem<TiendaVO>(tiendaVOs, RecursiveTreeObject::getChildren);
-		treeView.getColumns().setAll(colNombre, colDirec);
+		treeView.getColumns().setAll(colNombre, colDirec, colCiudad);
 		treeView.setRoot(root);
 		treeView.setShowRoot(false);
 		
@@ -134,8 +138,16 @@ public class TiendasDosController implements Initializable {
 //				Se obtienen los nombres de los prouctos disponibles en la tienda
 				TreeItem<TiendaVO> tiendaSeleccionada = treeView.getSelectionModel().getSelectedItem();
 				TiendaVO tiendaObtenida = tiendaSeleccionada.getValue();
-				StringProperty nombreObtenido = tiendaObtenida.getNombre();
 				productosDeLaTienda = tiendaObtenida.getProductos();
+				
+				FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/ProductosDeLaTienda.fxml"));
+				loader.setControllerFactory(applicationContext::getBean);
+				try {
+					Parent root = loader.load();
+					pantallasController.cambiarPantalla(root);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		};
 		
@@ -149,7 +161,6 @@ public class TiendasDosController implements Initializable {
 			e1.printStackTrace();
 			System.err.println("------ ERROR AL CARGAR EL CONTENIDO DEL DRAWER ------");
 		}
-		
 	}
 	
 	public static class TiendaVO extends RecursiveTreeObject<TiendaVO> {

@@ -1,5 +1,6 @@
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\entidades\Cliente.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\PantallasController.java
+C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\TiendasDelProductoController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\service\ProductosDaoService.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\repository\ClientesDaoRepo.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\ITiendasDaoService.java
@@ -7,7 +8,6 @@ C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\EditarPerfilController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\PerfilCliente.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\ProductosDeLaTiendaController.java
-C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\TiendasDosController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\IClientesDaoRepo.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\repository\TiendasDaoRepo.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\IProductosDaoRepo.java
@@ -27,4 +27,5 @@ C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\ITiendasDaoRepo.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\DrawerController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\ProductosController.java
+C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\TiendasController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\repository\ProductosDaoRepo.java

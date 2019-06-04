@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.shopmaster.controller.ProductosDeLaTiendaController">
+<AnchorPane prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.shopmaster.controller.TiendasDelProductoController">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../images/fondoPerfil.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../images/volver2.png" />
          </image>
       </ImageView>
       <FlowPane layoutX="650.0" layoutY="400.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="200.0">
@@ -23,10 +30,10 @@
             </JFXTreeTableView>
          </children>
       </FlowPane>
-      <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
-         <image>
-            <Image url="@../images/volver2.png" />
-         </image>
-      </ImageView>
+      <Label layoutX="252.0" layoutY="70.0" text="El producto seleccionado está disponible en las siguientes tiendas" textFill="#f46662">
+         <font>
+            <Font name="Harlow Solid Italic" size="40.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

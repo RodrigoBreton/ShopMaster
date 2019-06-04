@@ -75,11 +75,11 @@ public class ProductosController implements Initializable {
 		Set<Tienda> tiendas = new HashSet<>();
 		
 		for (Producto p : productos) {
-			String obNombre = p.getNombre();
-			String obPrecio = p.getPrecio();
+			String nombre = p.getNombre();
+			String precio = p.getPrecio();
 			tiendas = p.getTiendas();
 
-			ProductoVO p1 = new ProductoVO(obNombre, obPrecio, tiendas);
+			ProductoVO p1 = new ProductoVO(nombre, precio, tiendas);
 			productoVOs.add(p1);
 		}
 
@@ -120,11 +120,9 @@ public class ProductosController implements Initializable {
 //				Se selecciona el nombre del objeto seleccionado y se imprime por pantalla
 				TreeItem<ProductoVO> productSelected = treeView.getSelectionModel().getSelectedItem();
 				ProductoVO productoGetted = productSelected.getValue();
-				StringProperty nombreObtenido = productoGetted.getNombre();
 				tiendasDelProducto =  productoGetted.getTiendas();
 				
-				
-				FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/ProductosDeLaTienda.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/TiendasDelProducto.fxml"));
 				loader.setControllerFactory(applicationContext::getBean);
 				try {
 					Parent root = loader.load();
@@ -132,22 +130,7 @@ public class ProductosController implements Initializable {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				
-//				String nombreDeTienda = new String();
-//				String calleDeTienda = new String();
-//				String ciudadDeLaTienda = new String();
-//				for(Tienda t : tiendasDelProducto){
-//					nombreDeTienda = t.getNombre();
-//					calleDeTienda = t.getDireccion().getCalle();
-//					ciudadDeLaTienda = t.getDireccion().getCiudad();
-//					nombresTiendas.add(nombreDeTienda);
-//					System.out.println("El producto está disponible en la tienda " + nombreDeTienda + " que está en la calle " + calleDeTienda +
-//							" en la ciudad "  + ciudadDeLaTienda);
-//				}
-//				System.out.println("El nombre del producto seleccionado es " + nombreObtenido);
-				
 			}
-			
 		}; 
 		
 		if(filaSeleccionada != null) {
@@ -162,7 +145,7 @@ public class ProductosController implements Initializable {
 		}
 	}
 
-	public class ProductoVO extends RecursiveTreeObject<ProductoVO> {
+	public static class ProductoVO extends RecursiveTreeObject<ProductoVO> {
 
 		StringProperty nombre;
 		StringProperty precio;
@@ -173,6 +156,10 @@ public class ProductosController implements Initializable {
 			this.nombre = new SimpleStringProperty(nombre);
 			this.precio = new SimpleStringProperty(precio);
 			this.tiendas = tiendas;
+		}
+		
+		public ProductoVO() {
+			
 		}
 
 		public StringProperty getNombre() {
