@@ -19,8 +19,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import pruebas.mvc.shopmaster.modelo.entidades.Cliente;
 import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoService;
 
@@ -38,54 +40,54 @@ public class ResetPassController implements Initializable {
 
 	@FXML
 	private StackPane stackPane;
-	
+
 	@Autowired
 	private IClientesDaoService dao;
-	
+
 	@Autowired
 	private ApplicationContext applicationContext;
 
 	@Autowired
 	private PantallasController pantallasController;
 
+	@Autowired
+	private Validaciones validar;
+
+	boolean succesfull = false;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+		mail.setStyle("-fx-text-inner-color: white");
+		username.setStyle("-fx-text-inner-color: white");
+
+	}
+
 	@FXML
 	void recuperarPass(ActionEvent event) {
 
+		List<Cliente> clientes = dao.obtenerClientes();
+
 		String usernameInput = username.getText();
 		String mailInput = mail.getText();
-		
-		List<Cliente> clientes = dao.obtenerClientes();
-		
-		boolean succesfull = false;
-//		Validacion usando el metodo de PantallasController
-//		boolean succesfull = p.validacionEntrada(usernameInput, mailInput);
-//		
-
-//		
-//		if(succesfull == true ) {
-//			System.out.println("Datos correctos");
-//		} else {
-//			System.out.println("Datos incorrectos");
-//		}
 
 		for (Cliente c : clientes) {
 			if (usernameInput.equals(c.getNombreUsuario()) && mailInput.equals(c.getEmail())) {
 				Text contra = new Text(c.getPassword());
 				JFXButton ok = new JFXButton("Iniciar Sesion");
-				JFXDialog dialog = pantallasController.crearDialog(new Text("Su contraseña es:"), contra, stackPane, ok);
+				JFXDialog dialog = pantallasController.crearDialog(new Text("Su contraseña es:"), contra, stackPane,
+						ok);
 
 				ok.setOnAction(new EventHandler<ActionEvent>() {
 
 					@Override
 					public void handle(ActionEvent event) {
 						try {
-							FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
+							FXMLLoader loader = new FXMLLoader(
+									getClass().getClassLoader().getResource("view/Login.fxml"));
 							loader.setControllerFactory(applicationContext::getBean);
 							Parent root = loader.load();
 							pantallasController.cambiarPantalla(root);
-							// Conseguir cerar la ventana
-//							Stage resetStage = LoginController.resetPassWindow;
-//							resetStage.close();
 
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -100,9 +102,9 @@ public class ResetPassController implements Initializable {
 //		 si ningun email introducido ni nombre de usuario coinciden
 //		 se imprime un mensaje de error
 		if (succesfull == !true) {
-			JFXButton ok = new JFXButton("okay");
+			JFXButton ok = new JFXButton("OK");
 			JFXDialog dialog = pantallasController.crearDialog(new Text("Error a la hora de recuperar la contraseña"),
-					new Text("No existe ninguna cuenta con esos datos"), stackPane, ok);
+					new Text("No existe ninguna cuenta con estos datos o los campos requeridos están vacíos"), stackPane, ok);
 
 			ok.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -117,11 +119,50 @@ public class ResetPassController implements Initializable {
 
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	@FXML
+	void goCambiarContra(ActionEvent event) throws IOException {
 
-		mail.setStyle("-fx-text-inner-color: white");
-		username.setStyle("-fx-text-inner-color: white");
+		List<Cliente> clientes = dao.obtenerClientes();
+
+		for (Cliente c : clientes) {
+			if (validar.esIgual(c.getNombreUsuario(), username.getText()) == true
+					&& validar.esIgual(c.getEmail(), mail.getText()) == true) {
+
+				succesfull = true;
+				LoginController.currentCliente = c;
+
+				FXMLLoader loader = new FXMLLoader(
+						getClass().getClassLoader().getResource("view/CambiarContrasenha.fxml"));
+				loader.setControllerFactory(applicationContext::getBean);
+				Parent root = loader.load();
+				pantallasController.cambiarPantalla(root);
+			}
+		}
+
+		if (succesfull == !true) {
+			JFXButton ok = new JFXButton("OK");
+			JFXDialog dialog = pantallasController.crearDialog(new Text("Error"),
+					new Text("No existe ninguna cuenta con estos datos o los campos requeridos están vacíos"), stackPane, ok);
+
+			ok.setOnAction(new EventHandler<ActionEvent>() {
+
+				@Override
+				public void handle(ActionEvent event) {
+					dialog.close();
+				}
+			});
+			dialog.show();
+		}
+
+	}
+
+	@FXML
+	void goBack(MouseEvent event) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
+		loader.setControllerFactory(applicationContext::getBean);
+		Parent root = loader.load();
+		pantallasController.cambiarPantalla(root);
+
 	}
 
 }

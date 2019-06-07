@@ -4,14 +4,13 @@ C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\service\ProductosDaoService.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\repository\ClientesDaoRepo.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\ITiendasDaoService.java
-C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\NewAccountController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\EditarPerfilController.java
-C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\PerfilCliente.java
+C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\PerfilClienteController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\ProductosDeLaTiendaController.java
+C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\RegistroController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\IClientesDaoRepo.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\repository\TiendasDaoRepo.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\IProductosDaoRepo.java
-C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\converters\ConverterVO.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\Validaciones.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\service\ClientesDaoService.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\configuracion\HibernateConfig.java
@@ -20,6 +19,7 @@ C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\ResetPassController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\entidades\Direccion.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\IClientesDaoService.java
+C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\CambiarContrasenhaController.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\dao\service\TiendasDaoService.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\modelo\interfaces\IProductosDaoService.java
 C:\Users\34634\eclipse-workspace\ShopMaster\src\main\java\pruebas\mvc\shopmaster\controller\LoginController.java

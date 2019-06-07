@@ -49,7 +49,6 @@ public class DrawerController implements Initializable {
 	
 	@FXML
     void goProductos(ActionEvent event) throws IOException {
-		System.out.println("Esta intentando ir a la pagina principal");
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Productos.fxml"));
 		loader.setControllerFactory(applicationContext::getBean);
 		Parent root = loader.load();
@@ -59,7 +58,6 @@ public class DrawerController implements Initializable {
 	
 	@FXML
     void goOut(ActionEvent event) throws IOException {
-		System.out.println("Esta intentando ir al login");
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
 		loader.setControllerFactory(applicationContext::getBean);
 		Parent root = loader.load();
@@ -68,7 +66,6 @@ public class DrawerController implements Initializable {
 
 	@FXML
     void goPerfil(ActionEvent event) throws IOException {
-		System.out.println("Esta intentando ir a la pagina de perfil");
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/PerfilCliente.fxml"));
 		loader.setControllerFactory(applicationContext::getBean);
 		Parent root = loader.load();
@@ -78,7 +75,6 @@ public class DrawerController implements Initializable {
 	
 	@FXML
     void goTiendas(ActionEvent event) throws IOException {
-		System.out.println("Esta intentando ir a la pagina de Tienda");
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Tiendas.fxml"));
 		loader.setControllerFactory(applicationContext::getBean);
 		Parent root = loader.load();
@@ -87,7 +83,6 @@ public class DrawerController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		
 	}
 

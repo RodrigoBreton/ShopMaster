@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebas.mvc.shopmaster.controller.CambiarContrasenhaController">
+   <children>
+      <ImageView fitHeight="1000.0" fitWidth="1500.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/fondoPerfil.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="460.0" layoutY="260.0" prefHeight="460.0" prefWidth="610.0" style="-fx-background-color: #2B1C4F;" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="460.0" AnchorPane.topAnchor="260.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="178.0" layoutY="14.0" text="Cambiar Contraseña" textFill="#f46662">
+               <font>
+                  <Font name="Harlow Solid Italic" size="28.0" />
+               </font>
+            </Label>
+            <JFXPasswordField fx:id="nuevaContrasenha1" focusColor="#f46662" labelFloat="true" layoutX="206.0" layoutY="151.0" promptText="Nueva Contraseña" unFocusColor="WHITE" />
+            <JFXPasswordField fx:id="nuevaContrasenha2" focusColor="#f46662" labelFloat="true" layoutX="206.0" layoutY="240.0" promptText="Repita la Contraseña" unFocusColor="WHITE" />
+            <JFXButton fx:id="btAceptar" buttonType="RAISED" layoutX="362.0" layoutY="357.0" onAction="#cambiarContrasenha" style="-fx-background-color: #f46662;" text="Aceptar" textFill="#2b1c4f">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btCancelar" buttonType="RAISED" layoutX="156.0" layoutY="357.0" onAction="#goBack" style="-fx-background-color: #f46662;" text="Cancelar" textFill="#2b1c4f">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <StackPane fx:id="stackPane" layoutY="160.0" prefHeight="160.0" prefWidth="580.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

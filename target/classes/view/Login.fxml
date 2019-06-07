@@ -29,11 +29,11 @@
                   <DropShadow />
                </effect>
             </ImageView>
-				<JFXTextField fx:id="user" focusColor="#f46662" labelFloat="true" layoutX="289.0" layoutY="206.0" prefHeight="41.0" prefWidth="222.0" promptText="Nombre de usuario" unFocusColor="WHITE">
+				<JFXTextField fx:id="userTF" focusColor="#f46662" labelFloat="true" layoutX="289.0" layoutY="206.0" prefHeight="41.0" prefWidth="222.0" promptText="Nombre de usuario" unFocusColor="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></JFXTextField>
-				<JFXPasswordField fx:id="password" focusColor="#f46662" labelFloat="true" layoutX="289.0" layoutY="338.0" prefHeight="41.0" prefWidth="222.0" promptText="Contraseña" unFocusColor="WHITE">
+				<JFXPasswordField fx:id="passwordTF" focusColor="#f46662" labelFloat="true" layoutX="289.0" layoutY="338.0" prefHeight="41.0" prefWidth="222.0" promptText="Contraseña" unFocusColor="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

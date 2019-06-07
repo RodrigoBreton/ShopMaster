@@ -20,5 +20,17 @@ public class Validaciones {
 		
 		return vacio;
 	}
+	
+	public boolean esIgual(String palabra, String palabra1) {
+		boolean correcto = false;
+		
+		if(palabra.equals(palabra1)) {
+			correcto = true;
+		}
+		
+		return correcto;
+	}
+	
+	
 
 }

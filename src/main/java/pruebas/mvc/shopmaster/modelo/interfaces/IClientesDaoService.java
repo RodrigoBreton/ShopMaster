@@ -9,5 +9,5 @@ public interface IClientesDaoService {
 	public void guardarCliente(Cliente c);
 	public List<Cliente> obtenerClientes();
 	public void actualizarCliente(Cliente c);
-
+	public void eliminarCliente(Cliente c);
 }

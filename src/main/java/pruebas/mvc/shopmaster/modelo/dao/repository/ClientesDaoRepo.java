@@ -47,5 +47,15 @@ public class ClientesDaoRepo implements IClientesDaoRepo {
 		t.commit();
 		sesion.close();
 	}
+	
+	public void eliminarCliente(Cliente c) {
+		Session sesion = factory.openSession();
+		Transaction t = sesion.beginTransaction();
+		
+		sesion.delete(c);
+		
+		t.commit();
+		sesion.close();
+	}
 
 }

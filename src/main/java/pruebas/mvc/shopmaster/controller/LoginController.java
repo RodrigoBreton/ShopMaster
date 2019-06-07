@@ -30,7 +30,7 @@ import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoService;
 
 @Component
 public class LoginController implements Initializable {
-	public static Stage resetPassWindow; //variable que guarda la ventana de resetPass
+	public static Stage resetPassWindow;
 
 	public static Cliente currentCliente;
 	
@@ -41,7 +41,7 @@ public class LoginController implements Initializable {
     private AnchorPane loginPane;
 	
 	@FXML
-	private JFXPasswordField password;
+	private JFXPasswordField passwordTF;
 
 	@FXML
 	private JFXButton login;
@@ -50,7 +50,7 @@ public class LoginController implements Initializable {
 	private JFXButton sing_up;
 
 	@FXML
-	private JFXTextField user;
+	private JFXTextField userTF;
 
 	@FXML
 	private StackPane loginStackPane;
@@ -69,13 +69,9 @@ public class LoginController implements Initializable {
 
 	@FXML
 	void makeLogin(ActionEvent event) throws IOException {
-
-//		No se como utilizar los snackbars
-//		JFXSnackbar iniciando = new JFXSnackbar(loginPane);
-//		iniciando.enqueue(new SnackbarEvent(node));
 		
-		String usernameInput = user.getText();
-		String passInput = password.getText();
+		String usernameInput = userTF.getText();
+		String passInput = passwordTF.getText();
 
 		boolean succesfull = false;
 
@@ -98,7 +94,6 @@ public class LoginController implements Initializable {
 
 					@Override
 					public void handle(ActionEvent event) {
-						// TODO Auto-generated method stub
 						dialog.close();
 					}
 				});
@@ -114,23 +109,20 @@ public class LoginController implements Initializable {
 		// En caso de no coincidir los datos se imprime una alerta
 		System.out.println("Salida del bucle");
 		if (succesfull == !true) {
-			System.out.println("Esta entrando");
-			JFXButton ok = new JFXButton("okay");
+			JFXButton ok = new JFXButton("OK");
 			JFXDialog dialog = pantallasController.crearDialog(new Text("Error en el Login"),
-					new Text("Usuario o Contraseña incorrectos"), loginStackPane, ok);
+					new Text("Usuario o Contraseña incorrectos o están vacíos"), loginStackPane, ok);
 
 			ok.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override
 				public void handle(ActionEvent event) {
-					// TODO Auto-generated method stub
 					dialog.close();
 				}
 			});
 			dialog.show();
 		} else {
 			// En caso de coincidir se dirije a la pantalla principal
-			System.out.println("Dirigiendose a la pantalla de productos");
 			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Productos.fxml"));
 			loader.setControllerFactory(applicationContext::getBean);
 			Parent root = loader.load();
@@ -140,9 +132,8 @@ public class LoginController implements Initializable {
 
 	@FXML
 	public void makeNewAccount(ActionEvent event) throws IOException {
-		System.out.println("Se ha pulsado el boton para ir a la pantalla de registro");
 
-		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/NewAccount.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Registro.fxml"));
 		loader.setControllerFactory(applicationContext::getBean);
 		Parent root = loader.load();
 		pantallasController.cambiarPantalla(root);
@@ -166,8 +157,8 @@ public class LoginController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		password.setStyle("-fx-text-inner-color: white");
-		user.setStyle("-fx-text-inner-color: white");
+		passwordTF.setStyle("-fx-text-inner-color: white");
+		userTF.setStyle("-fx-text-inner-color: white");
 	}
 
 }

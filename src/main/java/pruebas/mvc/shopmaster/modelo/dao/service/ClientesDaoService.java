@@ -29,7 +29,11 @@ public class ClientesDaoService implements IClientesDaoService{
 	@Override
 	public void actualizarCliente(Cliente c) {
 		dao.actualizarCliente(c);
-		
+	}
+
+	@Override
+	public void eliminarCliente(Cliente c) {
+		dao.eliminarCliente(c);
 	}
 
 }

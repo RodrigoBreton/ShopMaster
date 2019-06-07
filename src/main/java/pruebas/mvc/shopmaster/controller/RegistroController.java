@@ -29,7 +29,7 @@ import pruebas.mvc.shopmaster.modelo.entidades.Direccion;
 import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoService;
 
 @Component
-public class NewAccountController implements Initializable {
+public class RegistroController implements Initializable {
 
 	@Autowired
 	private ApplicationContext applicationContext;
