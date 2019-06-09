@@ -99,7 +99,6 @@ INSERT INTO `shopmaster`.`productos_tiendas` (`id_producto`, `id_tienda`) VALUES
 INSERT INTO `shopmaster`.`productos_tiendas` (`id_producto`, `id_tienda`) VALUES ('23', '2');
 INSERT INTO `shopmaster`.`productos_tiendas` (`id_producto`, `id_tienda`) VALUES ('25', '2');
 INSERT INTO `shopmaster`.`productos_tiendas` (`id_producto`, `id_tienda`) VALUES ('26', '5');
-INSERT INTO `shopmaster`.`productos_tiendas` (`id_producto`, `id_tienda`) VALUES ('26', '5');
 INSERT INTO `shopmaster`.`productos_tiendas` (`id_producto`, `id_tienda`) VALUES ('27', '5');
 INSERT INTO `shopmaster`.`productos_tiendas` (`id_producto`, `id_tienda`) VALUES ('28', '5');
 INSERT INTO `shopmaster`.`productos_tiendas` (`id_producto`, `id_tienda`) VALUES ('30', '5');
