@@ -135,7 +135,7 @@ public class PerfilClienteController implements Initializable {
 
 	@FXML
 	void goCambiarCuenta(ActionEvent event) throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/CambiarContraseña.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/CambiarContrasenha.fxml"));
 		loader.setControllerFactory(applicationContext::getBean);
 		Parent root = loader.load();
 		pantallasController.cambiarPantalla(root);

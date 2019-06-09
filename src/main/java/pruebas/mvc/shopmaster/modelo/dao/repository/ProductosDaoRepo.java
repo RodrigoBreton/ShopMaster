@@ -39,14 +39,4 @@ public class ProductosDaoRepo implements IProductosDaoRepo {
 		
 		return productos;
 	}
-
-	@Override
-	public Producto obtenerById(int id) {
-		Session sesion = factory.openSession();
-	
-		Producto p = (Producto) sesion.createQuery("SELECT p FROM Producto p WHERE id=" + id).uniqueResult();
-		
-		return p;
-	}
-
 }

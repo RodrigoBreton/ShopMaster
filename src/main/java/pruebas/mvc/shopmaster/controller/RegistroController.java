@@ -41,9 +41,6 @@ public class RegistroController implements Initializable {
 	private JFXTextField newApellidos;
 
 	@FXML
-	private JFXDatePicker newFechaNacimiento;
-
-	@FXML
 	private JFXTextField newNombreUsuario;
 
 	@FXML
@@ -77,7 +74,7 @@ public class RegistroController implements Initializable {
 	private StackPane stackPane;
 
 	@FXML
-	private ImageView volverAtrás;
+	private ImageView volverAtras;
 
 	@Autowired
 	private IClientesDaoService dao;
@@ -89,7 +86,7 @@ public class RegistroController implements Initializable {
 	private Validaciones validar;
 
 	@FXML
-	void crearCliente(ActionEvent event) {
+	public void crearCliente(ActionEvent event) {
 
 		// COMPROBACION DE QUE NO HAY NINGUN CAMPO VACIO
 		if (validar.validarCampoVacio(newNombre) == true || validar.validarCampoVacio(newApellidos) == true
@@ -181,7 +178,7 @@ public class RegistroController implements Initializable {
 	}
 
 	@FXML
-	void volverALogin(MouseEvent event) throws IOException {
+	public void volverALogin(MouseEvent event) throws IOException {
 
 		FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/Login.fxml"));
 		loader.setControllerFactory(applicationContext::getBean);

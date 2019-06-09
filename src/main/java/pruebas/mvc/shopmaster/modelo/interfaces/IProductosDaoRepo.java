@@ -8,6 +8,4 @@ public interface IProductosDaoRepo {
 	
 	public void guardarProducto(Producto p);
 	public Set<Producto> obtenerProductos();
-	public Producto obtenerById(int id);
-
 }

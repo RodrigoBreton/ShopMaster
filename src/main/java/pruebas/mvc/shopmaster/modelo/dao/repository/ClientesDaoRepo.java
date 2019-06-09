@@ -15,10 +15,6 @@ import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoRepo;
 public class ClientesDaoRepo implements IClientesDaoRepo {
 	private SessionFactory factory = HibernateConfig.getSessionFactory();
 	
-	public ClientesDaoRepo() {
-		
-	}
-	
 	public void guardarCliente(Cliente c) {
 		Session sesion = factory.openSession();
 		Transaction t = sesion.beginTransaction();

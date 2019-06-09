@@ -26,11 +26,4 @@ public class ProductosDaoService implements IProductosDaoService {
 		Set<Producto> productos = new HashSet<>();
 		return productos = dao.obtenerProductos();
 	}
-
-	@Override
-	public Producto obtenerById(int id) {
-		Producto p = dao.obtenerById(id);
-		return p;
-	}
-
 }
