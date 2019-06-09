@@ -25,8 +25,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import pruebas.mvc.shopmaster.Main;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IClientesDaoService;
 import pruebas.mvc.shopmaster.modelo.entidades.Cliente;
-import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoService;
 
 @Component
 public class LoginController implements Initializable {

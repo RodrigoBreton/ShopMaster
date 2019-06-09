@@ -10,9 +10,9 @@ import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import pruebas.mvc.shopmaster.configuracion.HibernateConfig;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IProductosDaoRepo;
 import pruebas.mvc.shopmaster.modelo.entidades.Producto;
 import pruebas.mvc.shopmaster.modelo.entidades.Tienda;
-import pruebas.mvc.shopmaster.modelo.interfaces.IProductosDaoRepo;
 
 @Repository
 public class ProductosDaoRepo implements IProductosDaoRepo {

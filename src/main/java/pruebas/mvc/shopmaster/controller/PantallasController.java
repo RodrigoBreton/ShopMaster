@@ -24,8 +24,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import pruebas.mvc.shopmaster.Main;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IClientesDaoService;
 import pruebas.mvc.shopmaster.modelo.entidades.Cliente;
-import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoService;
 
 @Component
 public class PantallasController {

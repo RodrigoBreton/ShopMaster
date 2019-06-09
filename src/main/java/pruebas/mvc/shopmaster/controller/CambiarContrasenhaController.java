@@ -20,7 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoService;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IClientesDaoService;
 
 @Component
 public class CambiarContrasenhaController implements Initializable {

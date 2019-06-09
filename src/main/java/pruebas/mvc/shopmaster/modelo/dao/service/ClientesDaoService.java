@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IClientesDaoRepo;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IClientesDaoService;
 import pruebas.mvc.shopmaster.modelo.entidades.Cliente;
-import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoRepo;
-import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoService;
 
 @Service
 public class ClientesDaoService implements IClientesDaoService{

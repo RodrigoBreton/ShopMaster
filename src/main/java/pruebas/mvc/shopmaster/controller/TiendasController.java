@@ -33,10 +33,10 @@ import javafx.scene.control.TreeTableColumn.CellDataFeatures;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.util.Callback;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IProductosDaoService;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.ITiendasDaoService;
 import pruebas.mvc.shopmaster.modelo.entidades.Producto;
 import pruebas.mvc.shopmaster.modelo.entidades.Tienda;
-import pruebas.mvc.shopmaster.modelo.interfaces.IProductosDaoService;
-import pruebas.mvc.shopmaster.modelo.interfaces.ITiendasDaoService;
 
 @Component
 public class TiendasController implements Initializable {

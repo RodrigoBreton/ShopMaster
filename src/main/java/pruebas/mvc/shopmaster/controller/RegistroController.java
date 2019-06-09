@@ -24,9 +24,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IClientesDaoService;
 import pruebas.mvc.shopmaster.modelo.entidades.Cliente;
 import pruebas.mvc.shopmaster.modelo.entidades.Direccion;
-import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoService;
 
 @Component
 public class RegistroController implements Initializable {

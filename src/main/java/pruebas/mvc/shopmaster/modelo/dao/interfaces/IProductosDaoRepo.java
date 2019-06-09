@@ -1,4 +1,4 @@
-package pruebas.mvc.shopmaster.modelo.interfaces;
+package pruebas.mvc.shopmaster.modelo.dao.interfaces;
 
 import java.util.Set;
 

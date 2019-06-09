@@ -8,8 +8,8 @@ import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import pruebas.mvc.shopmaster.configuracion.HibernateConfig;
+import pruebas.mvc.shopmaster.modelo.dao.interfaces.IClientesDaoRepo;
 import pruebas.mvc.shopmaster.modelo.entidades.Cliente;
-import pruebas.mvc.shopmaster.modelo.interfaces.IClientesDaoRepo;
 
 @Repository
 public class ClientesDaoRepo implements IClientesDaoRepo {
