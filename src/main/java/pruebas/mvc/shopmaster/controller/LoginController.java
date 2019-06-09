@@ -81,9 +81,7 @@ public class LoginController implements Initializable {
 		for (Cliente client : clientes) {
 			String username = client.getNombreUsuario();
 			String password = client.getPassword();
-			System.out.println(username);
-			System.out.println(password);
-
+	
 			if (username.equals(usernameInput) && password.equals(passInput)) {
 
 				JFXButton ok = new JFXButton("okay");
@@ -101,13 +99,10 @@ public class LoginController implements Initializable {
 				succesfull = true;
 				currentCliente = client;
 
-				System.out.println("Bienvenido");
-
 			}
 		}
 
 		// En caso de no coincidir los datos se imprime una alerta
-		System.out.println("Salida del bucle");
 		if (succesfull == !true) {
 			JFXButton ok = new JFXButton("OK");
 			JFXDialog dialog = pantallasController.crearDialog(new Text("Error en el Login"),

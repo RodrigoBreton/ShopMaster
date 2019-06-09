@@ -66,6 +66,8 @@ public class ProductosController implements Initializable {
 	private IProductosDaoService daop;
 	
 	public static Set<Tienda> tiendasDelProducto = new HashSet<>();
+	
+	public static StringProperty nombreProductoSeleccionado;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -121,6 +123,7 @@ public class ProductosController implements Initializable {
 				TreeItem<ProductoVO> productSelected = treeView.getSelectionModel().getSelectedItem();
 				ProductoVO productoGetted = productSelected.getValue();
 				tiendasDelProducto =  productoGetted.getTiendas();
+				nombreProductoSeleccionado = productoGetted.getNombre();
 				
 				FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("view/TiendasDelProducto.fxml"));
 				loader.setControllerFactory(applicationContext::getBean);

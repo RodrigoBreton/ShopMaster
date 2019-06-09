@@ -22,13 +22,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableColumn.CellDataFeatures;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 import pruebas.mvc.shopmaster.controller.ProductosController.ProductoVO;
-import pruebas.mvc.shopmaster.controller.TiendasController.TiendaVO;
 import pruebas.mvc.shopmaster.modelo.entidades.Producto;
 
 @Component
@@ -42,12 +42,17 @@ public class ProductosDeLaTiendaController implements Initializable {
 
 	@FXML
 	private JFXTreeTableView<ProductoVO> treeView;
+	
+	@FXML
+    private Label nombreTienda;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		Set<Producto> productos = TiendasController.productosDeLaTienda;
 		ObservableList<ProductoVO> productoVOs = FXCollections.observableArrayList(); 
+		
+		nombreTienda.setText(TiendasController.nombreTiendaSeleccionada.get());
 		
 		for(Producto p : productos) {
 			String nombre = p.getNombre();

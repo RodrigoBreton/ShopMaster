@@ -2,7 +2,6 @@ package pruebas.mvc.shopmaster.controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -23,6 +22,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableColumn.CellDataFeatures;
@@ -43,11 +43,16 @@ public class TiendasDelProductoController implements Initializable {
 	@FXML
     private JFXTreeTableView<TiendaVO> treeView;
 	
+	@FXML
+    private Label nombreProducto;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		Set<Tienda> tiendas = ProductosController.tiendasDelProducto;
 		ObservableList<TiendaVO> tiendaVOs = FXCollections.observableArrayList();
+		
+		nombreProducto.setText(ProductosController.nombreProductoSeleccionado.get());
 		
 		for(Tienda t : tiendas) {
 			String nombre = t.getNombre();

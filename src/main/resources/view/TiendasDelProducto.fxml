@@ -30,7 +30,12 @@
             </JFXTreeTableView>
          </children>
       </FlowPane>
-      <Label layoutX="252.0" layoutY="70.0" text="El producto seleccionado está disponible en las siguientes tiendas" textFill="#f46662">
+      <Label layoutX="617.0" layoutY="77.0" text="está disponible en las siguientes tiendas" textFill="#f46662">
+         <font>
+            <Font name="Harlow Solid Italic" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombreProducto" layoutX="324.0" layoutY="77.0" prefHeight="68.0" prefWidth="327.0" text="label" textFill="#f46662">
          <font>
             <Font name="Harlow Solid Italic" size="40.0" />
          </font>

@@ -120,7 +120,6 @@
             <Font size="18.0" />
          </font>
       </JFXButton>
-      <StackPane fx:id="stackPane" layoutX="547.0" layoutY="655.0" prefHeight="160.0" prefWidth="425.0" style="-fx-background-color: none;" />
       <ImageView fx:id="volverAtrás" fitHeight="50.0" fitWidth="50.0" layoutX="20.0" layoutY="19.0" onMouseClicked="#volverALogin" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
          <image>
             <Image url="@../images/volver2.png" />
@@ -131,5 +130,6 @@
             <Image url="@../images/logo_2.png" />
          </image>
       </ImageView>
+      <StackPane fx:id="stackPane" layoutX="547.0" layoutY="655.0" prefHeight="160.0" prefWidth="425.0" style="-fx-background-color: none;" />
    </children>
 </AnchorPane>
